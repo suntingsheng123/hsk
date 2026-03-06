@@ -1,0 +1,98 @@
+{
+  "level": 2,
+  "totalWords": 300,
+  "categories": [
+    {
+      "name": "身体健康",
+      "icon": "🏥",
+      "words": [
+        { "zh": "身体", "pinyin": "shēntǐ", "en": "body", "example": "他身体很好。" },
+        { "zh": "眼睛", "pinyin": "yǎnjing", "en": "eye", "example": "她的眼睛很大。" },
+        { "zh": "头", "pinyin": "tóu", "en": "head", "example": "我头疼。" },
+        { "zh": "手", "pinyin": "shǒu", "en": "hand", "example": "请洗手。" },
+        { "zh": "脚", "pinyin": "jiǎo", "en": "foot", "example": "我的脚很累。" },
+        { "zh": "生病", "pinyin": "shēngbìng", "en": "to be sick", "example": "他生病了。" },
+        { "zh": "药", "pinyin": "yào", "en": "medicine", "example": "你吃药了吗？" },
+        { "zh": "医院", "pinyin": "yīyuàn", "en": "hospital", "example": "我去医院。" }
+      ]
+    },
+    {
+      "name": "交通出行",
+      "icon": "🚌",
+      "words": [
+        { "zh": "公共汽车", "pinyin": "gōnggòng qìchē", "en": "bus", "example": "我坐公共汽车去。" },
+        { "zh": "出租车", "pinyin": "chūzūchē", "en": "taxi", "example": "我们打出租车吧。" },
+        { "zh": "自行车", "pinyin": "zìxíngchē", "en": "bicycle", "example": "他骑自行车上班。" },
+        { "zh": "飞机", "pinyin": "fēijī", "en": "airplane", "example": "我坐飞机去北京。" },
+        { "zh": "火车", "pinyin": "huǒchē", "en": "train", "example": "火车很快。" },
+        { "zh": "路", "pinyin": "lù", "en": "road", "example": "这条路很长。" },
+        { "zh": "走", "pinyin": "zǒu", "en": "to walk", "example": "我们走路去吧。" }
+      ]
+    },
+    {
+      "name": "天气自然",
+      "icon": "🌤️",
+      "words": [
+        { "zh": "天气", "pinyin": "tiānqì", "en": "weather", "example": "今天天气怎么样？" },
+        { "zh": "下雨", "pinyin": "xià yǔ", "en": "to rain", "example": "明天要下雨。" },
+        { "zh": "下雪", "pinyin": "xià xuě", "en": "to snow", "example": "冬天下雪了。" },
+        { "zh": "阴", "pinyin": "yīn", "en": "cloudy", "example": "今天是阴天。" },
+        { "zh": "晴", "pinyin": "qíng", "en": "sunny", "example": "今天天晴了。" },
+        { "zh": "风", "pinyin": "fēng", "en": "wind", "example": "今天风很大。" }
+      ]
+    },
+    {
+      "name": "颜色",
+      "icon": "🎨",
+      "words": [
+        { "zh": "红", "pinyin": "hóng", "en": "red", "example": "红色是中国的颜色。" },
+        { "zh": "白", "pinyin": "bái", "en": "white", "example": "白色的猫很可爱。" },
+        { "zh": "黑", "pinyin": "hēi", "en": "black", "example": "他穿黑色的衣服。" },
+        { "zh": "绿", "pinyin": "lǜ", "en": "green", "example": "树叶是绿色的。" },
+        { "zh": "蓝", "pinyin": "lán", "en": "blue", "example": "天空是蓝色的。" },
+        { "zh": "黄", "pinyin": "huáng", "en": "yellow", "example": "这朵花是黄色的。" }
+      ]
+    },
+    {
+      "name": "购物消费",
+      "icon": "🛒",
+      "words": [
+        { "zh": "商店", "pinyin": "shāngdiàn", "en": "shop", "example": "我去商店买东西。" },
+        { "zh": "贵", "pinyin": "guì", "en": "expensive", "example": "这个太贵了。" },
+        { "zh": "便宜", "pinyin": "piányi", "en": "cheap", "example": "这个很便宜。" },
+        { "zh": "钱", "pinyin": "qián", "en": "money", "example": "我没有钱。" },
+        { "zh": "块", "pinyin": "kuài", "en": "yuan (spoken)", "example": "十块钱。" },
+        { "zh": "卖", "pinyin": "mài", "en": "to sell", "example": "他卖水果。" },
+        { "zh": "东西", "pinyin": "dōngxi", "en": "thing / stuff", "example": "买什么东西？" }
+      ]
+    },
+    {
+      "name": "运动爱好",
+      "icon": "⚽",
+      "words": [
+        { "zh": "运动", "pinyin": "yùndòng", "en": "sports / exercise", "example": "我喜欢运动。" },
+        { "zh": "踢足球", "pinyin": "tī zúqiú", "en": "to play football", "example": "他喜欢踢足球。" },
+        { "zh": "打篮球", "pinyin": "dǎ lánqiú", "en": "to play basketball", "example": "我们打篮球吧。" },
+        { "zh": "游泳", "pinyin": "yóuyǒng", "en": "to swim", "example": "夏天我去游泳。" },
+        { "zh": "跑步", "pinyin": "pǎobù", "en": "to run", "example": "他每天跑步。" },
+        { "zh": "唱歌", "pinyin": "chàng gē", "en": "to sing", "example": "她唱歌很好听。" },
+        { "zh": "跳舞", "pinyin": "tiào wǔ", "en": "to dance", "example": "我们一起跳舞吧。" },
+        { "zh": "画画", "pinyin": "huà huà", "en": "to draw / paint", "example": "我喜欢画画。" }
+      ]
+    },
+    {
+      "name": "方位介词",
+      "icon": "📍",
+      "words": [
+        { "zh": "上", "pinyin": "shàng", "en": "up / on", "example": "书在桌子上。" },
+        { "zh": "下", "pinyin": "xià", "en": "down / under", "example": "猫在桌子下。" },
+        { "zh": "左", "pinyin": "zuǒ", "en": "left", "example": "向左转。" },
+        { "zh": "右", "pinyin": "yòu", "en": "right", "example": "向右走。" },
+        { "zh": "前", "pinyin": "qián", "en": "front", "example": "学校在前面。" },
+        { "zh": "后", "pinyin": "hòu", "en": "back / behind", "example": "他在我后面。" },
+        { "zh": "里", "pinyin": "lǐ", "en": "inside", "example": "我在家里。" },
+        { "zh": "外", "pinyin": "wài", "en": "outside", "example": "外面很冷。" }
+      ]
+    }
+  ]
+}

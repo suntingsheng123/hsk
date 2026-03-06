@@ -1,0 +1,86 @@
+{
+  "level": 4,
+  "totalWords": 1200,
+  "categories": [
+    {
+      "name": "科技网络",
+      "icon": "💻",
+      "words": [
+        { "zh": "网站", "pinyin": "wǎngzhàn", "en": "website", "example": "这个网站很有用。" },
+        { "zh": "下载", "pinyin": "xiàzài", "en": "to download", "example": "我下载了一个软件。" },
+        { "zh": "密码", "pinyin": "mìmǎ", "en": "password", "example": "请输入密码。" },
+        { "zh": "信息", "pinyin": "xìnxī", "en": "information", "example": "这条信息很重要。" },
+        { "zh": "技术", "pinyin": "jìshù", "en": "technology", "example": "科学技术发展很快。" },
+        { "zh": "数据", "pinyin": "shùjù", "en": "data", "example": "我们需要分析数据。" },
+        { "zh": "打印", "pinyin": "dǎyìn", "en": "to print", "example": "请帮我打印这份文件。" },
+        { "zh": "程序", "pinyin": "chéngxù", "en": "program", "example": "这个程序有问题。" }
+      ]
+    },
+    {
+      "name": "经济金融",
+      "icon": "📊",
+      "words": [
+        { "zh": "经济", "pinyin": "jīngjì", "en": "economy", "example": "中国经济发展很快。" },
+        { "zh": "收入", "pinyin": "shōurù", "en": "income", "example": "他的收入很高。" },
+        { "zh": "支出", "pinyin": "zhīchū", "en": "expense", "example": "这个月支出太多。" },
+        { "zh": "银行", "pinyin": "yínháng", "en": "bank", "example": "我去银行取钱。" },
+        { "zh": "贸易", "pinyin": "màoyì", "en": "trade", "example": "国际贸易很重要。" },
+        { "zh": "市场", "pinyin": "shìchǎng", "en": "market", "example": "这个市场很大。" },
+        { "zh": "价格", "pinyin": "jiàgé", "en": "price", "example": "价格太高了。" },
+        { "zh": "竞争", "pinyin": "jìngzhēng", "en": "competition", "example": "市场竞争很激烈。" }
+      ]
+    },
+    {
+      "name": "媒体传播",
+      "icon": "📰",
+      "words": [
+        { "zh": "新闻", "pinyin": "xīnwén", "en": "news", "example": "你看今天的新闻了吗？" },
+        { "zh": "报纸", "pinyin": "bàozhǐ", "en": "newspaper", "example": "爷爷每天看报纸。" },
+        { "zh": "广告", "pinyin": "guǎnggào", "en": "advertisement", "example": "这个广告很有创意。" },
+        { "zh": "杂志", "pinyin": "zázhì", "en": "magazine", "example": "她喜欢看时尚杂志。" },
+        { "zh": "节目", "pinyin": "jiémù", "en": "program / show", "example": "这个节目很好看。" },
+        { "zh": "消息", "pinyin": "xiāoxi", "en": "message / news", "example": "我收到一条消息。" }
+      ]
+    },
+    {
+      "name": "社会法律",
+      "icon": "⚖️",
+      "words": [
+        { "zh": "法律", "pinyin": "fǎlǜ", "en": "law", "example": "大家要遵守法律。" },
+        { "zh": "社会", "pinyin": "shèhuì", "en": "society", "example": "社会在发展。" },
+        { "zh": "政府", "pinyin": "zhèngfǔ", "en": "government", "example": "政府做了很多工作。" },
+        { "zh": "公民", "pinyin": "gōngmín", "en": "citizen", "example": "他是中国公民。" },
+        { "zh": "责任", "pinyin": "zérèn", "en": "responsibility", "example": "这是我的责任。" },
+        { "zh": "权利", "pinyin": "quánlì", "en": "rights", "example": "每个人都有权利。" },
+        { "zh": "规定", "pinyin": "guīdìng", "en": "regulation", "example": "公司有很多规定。" }
+      ]
+    },
+    {
+      "name": "心理性格",
+      "icon": "🧠",
+      "words": [
+        { "zh": "性格", "pinyin": "xìnggé", "en": "personality", "example": "她性格很开朗。" },
+        { "zh": "自信", "pinyin": "zìxìn", "en": "confident", "example": "你要自信一点。" },
+        { "zh": "耐心", "pinyin": "nàixīn", "en": "patience", "example": "老师很有耐心。" },
+        { "zh": "勇敢", "pinyin": "yǒnggǎn", "en": "brave", "example": "他很勇敢。" },
+        { "zh": "诚实", "pinyin": "chéngshí", "en": "honest", "example": "做人要诚实。" },
+        { "zh": "骄傲", "pinyin": "jiāo'ào", "en": "proud / arrogant", "example": "不要太骄傲。" },
+        { "zh": "谦虚", "pinyin": "qiānxū", "en": "modest", "example": "他很谦虚。" },
+        { "zh": "幽默", "pinyin": "yōumò", "en": "humorous", "example": "他是一个幽默的人。" }
+      ]
+    },
+    {
+      "name": "旅游文化",
+      "icon": "✈️",
+      "words": [
+        { "zh": "旅游", "pinyin": "lǚyóu", "en": "to travel", "example": "我喜欢去旅游。" },
+        { "zh": "护照", "pinyin": "hùzhào", "en": "passport", "example": "请出示你的护照。" },
+        { "zh": "签证", "pinyin": "qiānzhèng", "en": "visa", "example": "我需要办签证。" },
+        { "zh": "风景", "pinyin": "fēngjǐng", "en": "scenery", "example": "这里的风景很美。" },
+        { "zh": "传统", "pinyin": "chuántǒng", "en": "tradition", "example": "这是中国传统文化。" },
+        { "zh": "博物馆", "pinyin": "bówùguǎn", "en": "museum", "example": "我们去博物馆吧。" },
+        { "zh": "纪念品", "pinyin": "jìniànpǐn", "en": "souvenir", "example": "我买了一些纪念品。" }
+      ]
+    }
+  ]
+}

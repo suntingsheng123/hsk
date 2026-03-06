@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK 词汇漫画 — 汉语水平考试词汇图鉴</title>
+<style>
+/* ===== Reset & Base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #2C1810;
+  --ink-black: #333;
+  --seal-red: #8B0000;
+  --gold: #D4A574;
+  --paper: #F5F0E8;
+  --white: #FFFFFF;
+  --hsk1: #4A9B6F;
+  --hsk2: #3A7BD5;
+  --hsk3: #E8913A;
+  --hsk4: #8E5BB5;
+  --hsk5: #C0392B;
+  --panel-shadow: 4px 4px 0 var(--ink);
+  --font-kai: 楷体, KaiTi, "华文楷体", STKaiti, "Noto Serif SC", serif;
+  --font-comic: "Comic Sans MS", "Segoe UI", "Noto Sans SC", sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-comic);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== Ink splatter background ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20%; left: -10%;
+  width: 50%; height: 50%;
+  background: radial-gradient(ellipse, rgba(44,24,16,0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -10%; right: -10%;
+  width: 40%; height: 40%;
+  background: radial-gradient(ellipse, rgba(139,0,0,0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Header — Comic Cover ===== */
+.header {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(180deg,
+    #E8DDD0 0%,
+    var(--paper) 40%,
+    var(--paper) 100%
+  );
+  border-bottom: 4px solid var(--ink);
+  overflow: hidden;
+}
+
+/* Ink wash mountain silhouette */
+.header::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background:
+    radial-gradient(ellipse 300px 80px at 15% 100%, rgba(44,24,16,0.08) 0%, transparent 100%),
+    radial-gradient(ellipse 200px 100px at 45% 100%, rgba(44,24,16,0.06) 0%, transparent 100%),
+    radial-gradient(ellipse 350px 90px at 75% 100%, rgba(44,24,16,0.07) 0%, transparent 100%),
+    radial-gradient(ellipse 150px 70px at 90% 100%, rgba(44,24,16,0.05) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.header-title {
+  font-family: var(--font-kai);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--ink);
+  letter-spacing: 0.15em;
+  position: relative;
+  display: inline-block;
+  -webkit-text-stroke: 1px var(--ink);
+}
+
+.header-subtitle {
+  font-family: var(--font-kai);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: #666;
+  margin-top: 8px;
+  letter-spacing: 0.3em;
+}
+
+/* Seal stamp */
+.seal {
+  display: inline-block;
+  width: 70px; height: 70px;
+  border: 3px solid var(--seal-red);
+  border-radius: 8px;
+  color: var(--seal-red);
+  font-family: var(--font-kai);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 70px;
+  text-align: center;
+  transform: rotate(-12deg);
+  position: absolute;
+  top: 30px; right: max(20px, 8vw);
+  opacity: 0.85;
+  letter-spacing: 0.1em;
+}
+
+/* ===== Chapter Navigation ===== */
+.chapter-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 0 20px;
+  background: var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.chapter-tab {
+  padding: 14px 28px;
+  font-family: var(--font-kai);
+  font-size: 1rem;
+  color: var(--gold);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.chapter-tab:hover {
+  background: rgba(212,165,116,0.15);
+}
+
+.chapter-tab.active {
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.chapter-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: var(--seal-red);
+}
+
+.chapter-tab .tab-detail {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.7;
+  font-family: var(--font-comic);
+  letter-spacing: 0;
+  margin-top: 2px;
+}
+
+/* ===== Search Bar ===== */
+.search-bar {
+  max-width: 600px;
+  margin: 24px auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 20px 12px 44px;
+  font-size: 1rem;
+  font-family: var(--font-comic);
+  border: 3px solid var(--ink);
+  background: var(--white);
+  box-shadow: var(--panel-shadow);
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.search-bar input:focus {
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.search-bar::before {
+  content: '🔍';
+  position: absolute;
+  left: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* ===== Stats Bar ===== */
+.stats-section {
+  max-width: 900px;
+  margin: 30px auto 10px;
+  padding: 0 20px;
+}
+
+.stats-title {
+  font-family: var(--font-kai);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
+.stats-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+  height: 200px;
+  padding: 20px 0;
+}
+
+.stat-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.stat-bar {
+  width: 60px;
+  border: 3px solid var(--ink);
+  border-radius: 6px 6px 0 0;
+  position: relative;
+  transition: transform 0.3s;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 8px,
+      rgba(44,24,16,0.1) 8px,
+      rgba(44,24,16,0.1) 9px
+    );
+}
+
+.stat-bar-wrap:hover .stat-bar {
+  transform: translateY(-4px);
+}
+
+.stat-bar-label {
+  font-family: var(--font-kai);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.stat-bar-count {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* Stat bubble */
+.stat-bubble {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  border: 2px solid var(--ink);
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  box-shadow: 3px 3px 0 var(--ink);
+  z-index: 10;
+}
+
+.stat-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--ink);
+}
+
+.stat-bar-wrap:hover .stat-bubble {
+  display: block;
+}
+
+/* ===== Category Divider ===== */
+.category-divider {
+  max-width: 1200px;
+  margin: 40px auto 20px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.category-divider::before,
+.category-divider::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ink), transparent);
+}
+
+.category-label {
+  font-family: var(--font-kai);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  padding: 8px 20px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: var(--panel-shadow);
+  letter-spacing: 0.15em;
+}
+
+.category-label .cat-icon {
+  margin-right: 8px;
+}
+
+.category-label .cat-en {
+  font-size: 0.85em;
+  color: #888;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* ===== Comic Panel Grid ===== */
+.panels-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.panels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* ===== Comic Panel ===== */
+.panel {
+  border: 3px solid var(--ink);
+  background: var(--white);
+  box-shadow: var(--panel-shadow);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  overflow: hidden;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px 20px;
+}
+
+.panel:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+  z-index: 5;
+}
+
+/* Span variations for comic feel */
+.panel.span-col2 { grid-column: span 2; }
+.panel.span-row2 { grid-row: span 2; min-height: 360px; }
+
+/* Category color ribbon */
+.panel .ribbon {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+}
+
+/* Main character (Chinese) */
+.panel .zh {
+  font-family: var(--font-kai);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-shadow:
+    2px 2px 0 rgba(212,165,116,0.4),
+    -1px -1px 0 rgba(255,255,255,0.8);
+  -webkit-text-stroke: 1px var(--ink);
+  line-height: 1.2;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.panel.span-row2 .zh {
+  font-size: 4.5rem;
+}
+
+.panel:hover .zh {
+  transform: scale(1.08);
+}
+
+/* Pinyin */
+.panel .pinyin {
+  font-size: 1rem;
+  color: #888;
+  margin-top: 6px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* English — corner annotation */
+.panel .en {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 0.75rem;
+  color: var(--white);
+  background: var(--ink);
+  padding: 2px 8px;
+  font-style: italic;
+}
+
+/* Speech bubble — example sentence */
+.panel .bubble {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: var(--white);
+  border: 3px solid var(--ink);
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  font-family: var(--font-kai);
+  max-width: 90%;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+  box-shadow: 3px 3px 0 var(--ink);
+  pointer-events: none;
+  line-height: 1.5;
+}
+
+.panel .bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 30px;
+  border: 7px solid transparent;
+  border-top-color: var(--ink);
+}
+
+.panel .bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 32px;
+  border: 5px solid transparent;
+  border-top-color: var(--white);
+  z-index: 1;
+}
+
+.panel:hover .bubble {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Dimmed state (search filter) */
+.panel.dimmed {
+  opacity: 0.2;
+  filter: grayscale(0.8);
+  pointer-events: none;
+}
+
+.panel.highlighted {
+  box-shadow: 0 0 0 4px var(--seal-red), var(--panel-shadow);
+}
+
+/* ===== Modal Overlay ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44,24,16,0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-card {
+  background: var(--white);
+  border: 4px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+  max-width: 480px;
+  width: 100%;
+  padding: 40px 36px;
+  text-align: center;
+  position: relative;
+  animation: modalPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px; right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.modal-zh {
+  font-family: var(--font-kai);
+  font-size: 5rem;
+  font-weight: 700;
+  -webkit-text-stroke: 2px var(--ink);
+  text-shadow: 3px 3px 0 rgba(212,165,116,0.4);
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.modal-pinyin {
+  font-size: 1.4rem;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.modal-en {
+  font-size: 1.1rem;
+  color: var(--ink-black);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.modal-example {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  padding: 16px;
+  font-family: var(--font-kai);
+  font-size: 1.2rem;
+  position: relative;
+  margin-top: 10px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.modal-example::before {
+  content: '💬';
+  position: absolute;
+  top: -14px; left: 14px;
+  font-size: 1.2rem;
+}
+
+.modal-category {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* ===== Pinyin Reference ===== */
+.pinyin-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.pinyin-appendix-title {
+  font-family: var(--font-kai);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.pinyin-appendix-subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.pinyin-box {
+  border: 3px solid var(--ink);
+  box-shadow: var(--panel-shadow);
+  background: var(--white);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.pinyin-box h3 {
+  font-family: var(--font-kai);
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--ink);
+  letter-spacing: 0.1em;
+}
+
+.pinyin-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pinyin-item {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  padding: 6px 14px;
+  font-family: var(--font-kai);
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: transform 0.15s;
+}
+
+.pinyin-item:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.tones-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.tone-card {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+  border: 2px solid var(--ink);
+  padding: 12px 8px;
+  box-shadow: 2px 2px 0 var(--ink);
+  background: var(--white);
+}
+
+.tone-card .tone-num {
+  font-size: 0.75rem;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.tone-card .tone-char {
+  font-family: var(--font-kai);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.tone-card .tone-desc {
+  font-size: 0.7rem;
+  color: #888;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 4px solid var(--ink);
+  background: var(--ink);
+  color: var(--gold);
+}
+
+.footer-end {
+  font-family: var(--font-kai);
+  font-size: 1.8rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 10px;
+}
+
+.footer-note {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .panels-grid {
+    grid-template-columns: 1fr;
+  }
+  .panel.span-col2 { grid-column: span 1; }
+  .panel.span-row2 { grid-row: span 1; min-height: 180px; }
+  .panel.span-row2 .zh { font-size: 3rem; }
+
+  .chapter-tab {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .chapter-tab .tab-detail { display: none; }
+
+  .stats-chart {
+    height: 150px;
+    gap: 12px;
+  }
+
+  .stat-bar { width: 40px; }
+
+  .seal { display: none; }
+
+  .header { padding: 40px 20px 30px; }
+
+  .tone-card { min-width: 70px; }
+}
+
+@media (max-width: 480px) {
+  .chapter-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .header-title { font-size: 2rem; }
+  .modal-zh { font-size: 3.5rem; }
+}
+
+/* ===== Loading ===== */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  font-family: var(--font-kai);
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px; height: 20px;
+  border: 3px solid var(--ink);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Category jump tags ===== */
+.category-tags {
+  max-width: 1200px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.cat-tag {
+  padding: 5px 14px;
+  font-family: var(--font-kai);
+  font-size: 0.85rem;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: all 0.2s;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.cat-tag:hover {
+  background: var(--ink);
+  color: var(--gold);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 40px;
+  font-family: var(--font-kai);
+  font-size: 1.1rem;
+  color: #999;
+  display: none;
+}
+
+/* ===== Course Notes Section ===== */
+.notes-section {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.notes-section-title {
+  font-family: var(--font-kai);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.notes-section-subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.notes-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 20px;
+}
+
+.notes-toggle-btn {
+  padding: 8px 24px;
+  font-family: var(--font-kai);
+  font-size: 0.95rem;
+  border: 3px solid var(--ink);
+  background: var(--white);
+  cursor: pointer;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+
+.notes-toggle-btn:first-child {
+  border-right: none;
+}
+
+.notes-toggle-btn.active {
+  background: var(--ink);
+  color: var(--gold);
+}
+
+.notes-raw {
+  border: 3px solid var(--ink);
+  box-shadow: var(--panel-shadow);
+  background: var(--white);
+  padding: 24px;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.8;
+  color: var(--ink-black);
+  max-height: 400px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.notes-raw::before {
+  content: '📄 content.txt — 原始课堂笔记';
+  display: block;
+  font-family: var(--font-comic);
+  font-size: 0.75rem;
+  color: #999;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.notes-clean {
+  display: none;
+}
+
+.notes-clean .note-card {
+  border: 3px solid var(--ink);
+  box-shadow: var(--panel-shadow);
+  background: var(--white);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.notes-clean .note-card h4 {
+  font-family: var(--font-kai);
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--ink);
+  letter-spacing: 0.1em;
+}
+
+.notes-clean .note-card h4 .note-icon {
+  margin-right: 8px;
+}
+
+.note-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.note-table th {
+  font-family: var(--font-kai);
+  text-align: left;
+  padding: 6px 12px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  font-size: 0.85rem;
+}
+
+.note-table td {
+  padding: 6px 12px;
+  border: 2px solid var(--ink);
+  font-size: 0.9rem;
+}
+
+.note-table td:first-child {
+  font-family: var(--font-kai);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.note-phrases {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.note-phrase {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.note-phrase .np-zh {
+  font-family: var(--font-kai);
+  font-size: 1.1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.note-phrase .np-py {
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.note-phrase .np-en {
+  font-size: 0.8rem;
+  color: var(--ink-black);
+  margin-left: auto;
+  text-align: right;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="seal">HSK</div>
+  <h1 class="header-title">HSK 词汇漫画</h1>
+  <p class="header-subtitle">汉语水平考试 · 第一级词汇图鉴</p>
+</header>
+
+<!-- ===== Chapter Navigation ===== -->
+<nav class="chapter-nav">
+  <button class="chapter-tab active" data-level="1" style="--accent: var(--hsk1)">
+    第一章 · HSK 1
+    <span class="tab-detail">150 words · Beginner ★☆☆☆☆</span>
+  </button>
+  <button class="chapter-tab" data-level="2" style="--accent: var(--hsk2)" disabled title="Coming soon">
+    第二章 · HSK 2
+    <span class="tab-detail">300 words · Elementary ★★☆☆☆</span>
+  </button>
+  <button class="chapter-tab" data-level="3" style="--accent: var(--hsk3)" disabled title="Coming soon">
+    第三章 · HSK 3
+    <span class="tab-detail">600 words · Intermediate ★★★☆☆</span>
+  </button>
+  <button class="chapter-tab" data-level="4" style="--accent: var(--hsk4)" disabled title="Coming soon">
+    第四章 · HSK 4
+    <span class="tab-detail">1200 words · Advanced ★★★★☆</span>
+  </button>
+  <button class="chapter-tab" data-level="5" style="--accent: var(--hsk5)" disabled title="Coming soon">
+    第五章 · HSK 5
+    <span class="tab-detail">2500 words · Proficient ★★★★★</span>
+  </button>
+</nav>
+
+<!-- ===== Search Bar ===== -->
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="搜索汉字、拼音或英文 …">
+</div>
+
+<!-- ===== Category Jump Tags ===== -->
+<div class="category-tags" id="categoryTags"></div>
+
+<!-- ===== Stats Section ===== -->
+<section class="stats-section">
+  <h2 class="stats-title">📊 各级词汇量一览</h2>
+  <div class="stats-chart">
+    <div class="stat-bar-wrap" data-level="1">
+      <div class="stat-bubble">HSK 1：150 词（入门级）</div>
+      <div class="stat-bar" style="height: 30px; background-color: var(--hsk1);"></div>
+      <span class="stat-bar-label">HSK 1</span>
+      <span class="stat-bar-count">150</span>
+    </div>
+    <div class="stat-bar-wrap" data-level="2">
+      <div class="stat-bubble">HSK 2：300 词（基础级）</div>
+      <div class="stat-bar" style="height: 60px; background-color: var(--hsk2);"></div>
+      <span class="stat-bar-label">HSK 2</span>
+      <span class="stat-bar-count">300</span>
+    </div>
+    <div class="stat-bar-wrap" data-level="3">
+      <div class="stat-bubble">HSK 3：600 词（进阶级）</div>
+      <div class="stat-bar" style="height: 100px; background-color: var(--hsk3);"></div>
+      <span class="stat-bar-label">HSK 3</span>
+      <span class="stat-bar-count">600</span>
+    </div>
+    <div class="stat-bar-wrap" data-level="4">
+      <div class="stat-bubble">HSK 4：1,200 词（中级）</div>
+      <div class="stat-bar" style="height: 140px; background-color: var(--hsk4);"></div>
+      <span class="stat-bar-label">HSK 4</span>
+      <span class="stat-bar-count">1200</span>
+    </div>
+    <div class="stat-bar-wrap" data-level="5">
+      <div class="stat-bubble">HSK 5：2,500 词（高级）</div>
+      <div class="stat-bar" style="height: 190px; background-color: var(--hsk5);"></div>
+      <span class="stat-bar-label">HSK 5</span>
+      <span class="stat-bar-count">2500</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Course Notes Section ===== -->
+<section class="notes-section" id="notesSection">
+  <h2 class="notes-section-title">📝 课堂笔记 · Lesson Notes</h2>
+  <p class="notes-section-subtitle">基于 content.txt 课程笔记整理</p>
+
+  <div class="notes-toggle">
+    <button class="notes-toggle-btn active" id="btnClean">整理版</button>
+    <button class="notes-toggle-btn" id="btnRaw">原始笔记</button>
+  </div>
+
+  <!-- Clean / interpreted version -->
+  <div class="notes-clean" id="notesClean" style="display:block;">
+
+    <div class="note-card">
+      <h4><span class="note-icon">🔤</span>拼音 · Pinyin System</h4>
+      <p style="margin-bottom:10px;font-size:0.9rem;color:#666;">HSK I — Lesson 1: 声母 (Initials) &amp; 韵母 (Finals)</p>
+      <div class="note-phrases">
+        <div class="note-phrase">
+          <span class="np-zh">声母</span>
+          <span class="np-py">shēngmǔ</span>
+          <span class="np-en">b p m f d t n l g k h j q x zh ch sh r z c s</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">韵母</span>
+          <span class="np-py">yùnmǔ</span>
+          <span class="np-en">a o e i u ü · ai ei ui ao ou iu · an en in un ün · ang eng ing ong</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-card">
+      <h4><span class="note-icon">🎵</span>四声 · Tones</h4>
+      <table class="note-table">
+        <tr><th>声调</th><th>符号</th><th>描述</th><th>示例</th></tr>
+        <tr><td>第一声</td><td>ā</td><td>High &amp; flat — "aaah"</td><td>妈 mā</td></tr>
+        <tr><td>第二声</td><td>á</td><td>Rising — "ah?"</td><td>麻 má</td></tr>
+        <tr><td>第三声</td><td>ǎ</td><td>Dip then rise — "aach"</td><td>马 mǎ</td></tr>
+        <tr><td>第四声</td><td>à</td><td>Falling — "ah!"</td><td>骂 mà</td></tr>
+        <tr><td>轻声</td><td>a</td><td>Neutral / light</td><td>吗 ma</td></tr>
+      </table>
+    </div>
+
+    <div class="note-card">
+      <h4><span class="note-icon">👨‍👩‍👧</span>新词 · New Words — 家庭</h4>
+      <table class="note-table">
+        <tr><th>汉字</th><th>拼音</th><th>English</th></tr>
+        <tr><td>爸爸</td><td>bàba</td><td>father</td></tr>
+        <tr><td>妈妈</td><td>māma</td><td>mother</td></tr>
+        <tr><td>爷爷</td><td>yéye</td><td>grandpa (paternal)</td></tr>
+        <tr><td>奶奶</td><td>nǎinai</td><td>grandma</td></tr>
+        <tr><td>姐姐</td><td>jiějie</td><td>elder sister</td></tr>
+        <tr><td>妹妹</td><td>mèimei</td><td>younger sister</td></tr>
+      </table>
+    </div>
+
+    <div class="note-card">
+      <h4><span class="note-icon">👤</span>代词 · Pronouns</h4>
+      <table class="note-table">
+        <tr><th>汉字</th><th>拼音</th><th>English</th></tr>
+        <tr><td>你</td><td>nǐ</td><td>you</td></tr>
+        <tr><td>您</td><td>nín</td><td>you (polite)</td></tr>
+        <tr><td>我</td><td>wǒ</td><td>I / me</td></tr>
+        <tr><td>他/她/它</td><td>tā</td><td>he / she / it</td></tr>
+      </table>
+      <p style="margin-top:12px;font-size:0.9rem;"><strong>复数 Plural = 们 (men)</strong></p>
+      <div class="note-phrases" style="margin-top:6px;">
+        <div class="note-phrase">
+          <span class="np-zh">你们</span>
+          <span class="np-py">nǐmen</span>
+          <span class="np-en">you (plural)</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">我们</span>
+          <span class="np-py">wǒmen</span>
+          <span class="np-en">we / us</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">他们</span>
+          <span class="np-py">tāmen</span>
+          <span class="np-en">they / them</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-card">
+      <h4><span class="note-icon">👋</span>问候 · Greetings &amp; Polite Expressions</h4>
+      <div class="note-phrases">
+        <div class="note-phrase">
+          <span class="np-zh">您好</span>
+          <span class="np-py">nín hǎo</span>
+          <span class="np-en">Hello (polite)</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">你们好</span>
+          <span class="np-py">nǐmen hǎo</span>
+          <span class="np-en">Hello everyone</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">对不起</span>
+          <span class="np-py">duìbuqǐ</span>
+          <span class="np-en">Sorry</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">没关系</span>
+          <span class="np-py">méi guānxi</span>
+          <span class="np-en">It's okay</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">谢谢</span>
+          <span class="np-py">xièxie</span>
+          <span class="np-en">Thanks</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">不谢</span>
+          <span class="np-py">bú xiè</span>
+          <span class="np-en">No thanks needed</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">不客气</span>
+          <span class="np-py">bú kèqi</span>
+          <span class="np-en">You're welcome</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">拜拜</span>
+          <span class="np-py">bàibai</span>
+          <span class="np-en">Bye bye</span>
+        </div>
+        <div class="note-phrase">
+          <span class="np-zh">再见</span>
+          <span class="np-py">zàijiàn</span>
+          <span class="np-en">Goodbye</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Raw original text -->
+  <div class="notes-raw" id="notesRaw" style="display:none;">加载中…</div>
+</section>
+
+<!-- ===== Panels Area ===== -->
+<main class="panels-container" id="panelsContainer">
+  <div class="loading" id="loading">加载中 …</div>
+  <div class="no-results" id="noResults">没有找到匹配的词汇 😕</div>
+</main>
+
+<!-- ===== Pinyin Reference ===== -->
+<section class="pinyin-section">
+  <h2 class="pinyin-appendix-title">番外篇 · 拼音速查</h2>
+  <p class="pinyin-appendix-subtitle">Pinyin Quick Reference</p>
+
+  <div class="pinyin-box">
+    <h3>声母 Initials</h3>
+    <div class="pinyin-grid">
+      <span class="pinyin-item">b</span><span class="pinyin-item">p</span>
+      <span class="pinyin-item">m</span><span class="pinyin-item">f</span>
+      <span class="pinyin-item">d</span><span class="pinyin-item">t</span>
+      <span class="pinyin-item">n</span><span class="pinyin-item">l</span>
+      <span class="pinyin-item">g</span><span class="pinyin-item">k</span>
+      <span class="pinyin-item">h</span><span class="pinyin-item">j</span>
+      <span class="pinyin-item">q</span><span class="pinyin-item">x</span>
+      <span class="pinyin-item">zh</span><span class="pinyin-item">ch</span>
+      <span class="pinyin-item">sh</span><span class="pinyin-item">r</span>
+      <span class="pinyin-item">z</span><span class="pinyin-item">c</span>
+      <span class="pinyin-item">s</span>
+    </div>
+  </div>
+
+  <div class="pinyin-box">
+    <h3>韵母 Finals</h3>
+    <div class="pinyin-grid">
+      <span class="pinyin-item">a</span><span class="pinyin-item">o</span>
+      <span class="pinyin-item">e</span><span class="pinyin-item">i</span>
+      <span class="pinyin-item">u</span><span class="pinyin-item">ü</span>
+      <span class="pinyin-item">ai</span><span class="pinyin-item">ei</span>
+      <span class="pinyin-item">ui</span><span class="pinyin-item">ao</span>
+      <span class="pinyin-item">ou</span><span class="pinyin-item">iu</span>
+      <span class="pinyin-item">an</span><span class="pinyin-item">en</span>
+      <span class="pinyin-item">in</span><span class="pinyin-item">un</span>
+      <span class="pinyin-item">ün</span><span class="pinyin-item">ang</span>
+      <span class="pinyin-item">eng</span><span class="pinyin-item">ing</span>
+      <span class="pinyin-item">ong</span>
+    </div>
+  </div>
+
+  <div class="pinyin-box">
+    <h3>四声 Four Tones</h3>
+    <div class="tones-demo">
+      <div class="tone-card">
+        <div class="tone-num">第一声</div>
+        <div class="tone-char">ā</div>
+        <div class="tone-desc">high &amp; flat</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-num">第二声</div>
+        <div class="tone-char">á</div>
+        <div class="tone-desc">rising</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-num">第三声</div>
+        <div class="tone-char">ǎ</div>
+        <div class="tone-desc">dip then rise</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-num">第四声</div>
+        <div class="tone-char">à</div>
+        <div class="tone-desc">falling</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-num">轻声</div>
+        <div class="tone-char">a</div>
+        <div class="tone-desc">neutral</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-end">未完待续 …</div>
+  <p class="footer-note">HSK 词汇漫画 · 基于 HSK 大纲整理 · 仅供学习参考</p>
+</footer>
+
+<!-- ===== Modal ===== -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-zh" id="modalZh"></div>
+    <div class="modal-pinyin" id="modalPinyin"></div>
+    <div class="modal-en" id="modalEn"></div>
+    <div class="modal-example" id="modalExample"></div>
+    <div class="modal-category" id="modalCategory"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ===== State =====
+  const levelColors = {
+    1: 'var(--hsk1)',
+    2: 'var(--hsk2)',
+    3: 'var(--hsk3)',
+    4: 'var(--hsk4)',
+    5: 'var(--hsk5)'
+  };
+
+  let currentLevel = 1;
+  let currentData = null;
+  let allPanels = [];
+
+  const container = document.getElementById('panelsContainer');
+  const loading = document.getElementById('loading');
+  const noResults = document.getElementById('noResults');
+  const searchInput = document.getElementById('searchInput');
+  const modal = document.getElementById('modal');
+  const categoryTags = document.getElementById('categoryTags');
+
+  // ===== Data Loading =====
+  async function loadLevel(level) {
+    loading.style.display = 'block';
+    noResults.style.display = 'none';
+
+    // Remove existing panels
+    container.querySelectorAll('.category-divider, .panels-grid').forEach(el => el.remove());
+
+    try {
+      const resp = await fetch(`data/hsk${level}.json`);
+      if (!resp.ok) throw new Error('Failed to load');
+      currentData = await resp.json();
+      currentLevel = level;
+      renderPanels(currentData);
+      renderCategoryTags(currentData);
+    } catch (err) {
+      loading.textContent = '加载失败，请确保通过 HTTP 服务器访问本页面。';
+      console.error(err);
+    }
+  }
+
+  // ===== Render Category Jump Tags =====
+  function renderCategoryTags(data) {
+    categoryTags.innerHTML = '';
+    data.categories.forEach((cat, i) => {
+      const tag = document.createElement('a');
+      tag.className = 'cat-tag';
+      tag.href = '#cat-' + i;
+      tag.textContent = cat.icon + ' ' + cat.name + (cat.nameEn ? ' · ' + cat.nameEn : '');
+      categoryTags.appendChild(tag);
+    });
+  }
+
+  // ===== Determine panel span class =====
+  function getSpanClass(index, total) {
+    // Create varied comic layout
+    if (total <= 3) return '';
+    const pattern = index % 7;
+    if (pattern === 0) return 'span-col2';
+    if (pattern === 3) return 'span-row2';
+    return '';
+  }
+
+  // ===== Render Panels =====
+  function renderPanels(data) {
+    loading.style.display = 'none';
+    allPanels = [];
+    const accent = levelColors[data.level];
+
+    data.categories.forEach((cat, catIdx) => {
+      // Category divider
+      const divider = document.createElement('div');
+      divider.className = 'category-divider';
+      divider.id = 'cat-' + catIdx;
+      const enLabel = cat.nameEn ? `<span class="cat-en"> · ${cat.nameEn}</span>` : '';
+      divider.innerHTML = `<span class="category-label"><span class="cat-icon">${cat.icon}</span>${cat.name}${enLabel}</span>`;
+      container.appendChild(divider);
+
+      // Grid
+      const grid = document.createElement('div');
+      grid.className = 'panels-grid';
+
+      cat.words.forEach((word, i) => {
+        const spanClass = getSpanClass(i, cat.words.length);
+        const panel = document.createElement('div');
+        panel.className = 'panel' + (spanClass ? ' ' + spanClass : '');
+        panel.dataset.zh = word.zh;
+        panel.dataset.pinyin = word.pinyin;
+        panel.dataset.en = word.en;
+        panel.dataset.example = word.example;
+        panel.dataset.category = cat.name;
+
+        panel.innerHTML = `
+          <div class="ribbon" style="background: ${accent};"></div>
+          <div class="zh">${word.zh}</div>
+          <div class="pinyin">${word.pinyin}</div>
+          <div class="en">${word.en}</div>
+          <div class="bubble">💬 ${word.example}</div>
+        `;
+
+        panel.addEventListener('click', () => openModal(word, cat.name));
+        grid.appendChild(panel);
+        allPanels.push(panel);
+      });
+
+      container.appendChild(grid);
+    });
+  }
+
+  // ===== Modal =====
+  function openModal(word, category) {
+    document.getElementById('modalZh').textContent = word.zh;
+    document.getElementById('modalPinyin').textContent = word.pinyin;
+    document.getElementById('modalEn').textContent = word.en;
+    document.getElementById('modalExample').textContent = '💬 ' + word.example;
+    document.getElementById('modalCategory').textContent = '分类：' + category;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // ===== Search =====
+  function removeDiacritics(str) {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+
+  searchInput.addEventListener('input', function () {
+    const query = this.value.trim();
+    if (!query) {
+      allPanels.forEach(p => {
+        p.classList.remove('dimmed', 'highlighted');
+      });
+      noResults.style.display = 'none';
+      return;
+    }
+
+    const q = query.toLowerCase();
+    const qNorm = removeDiacritics(query);
+    let matchCount = 0;
+
+    allPanels.forEach(p => {
+      const zh = p.dataset.zh;
+      const pinyin = p.dataset.pinyin.toLowerCase();
+      const pinyinNorm = removeDiacritics(p.dataset.pinyin);
+      const en = p.dataset.en.toLowerCase();
+
+      const match = zh.includes(q) || pinyin.includes(q) || pinyinNorm.includes(qNorm) || en.includes(q);
+
+      if (match) {
+        p.classList.remove('dimmed');
+        p.classList.add('highlighted');
+        matchCount++;
+      } else {
+        p.classList.add('dimmed');
+        p.classList.remove('highlighted');
+      }
+    });
+
+    noResults.style.display = matchCount === 0 ? 'block' : 'none';
+  });
+
+  // ===== Chapter Tab Click =====
+  document.querySelectorAll('.chapter-tab').forEach(tab => {
+    tab.addEventListener('click', function () {
+      if (this.disabled) return;
+      document.querySelectorAll('.chapter-tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      const level = parseInt(this.dataset.level);
+      searchInput.value = '';
+      loadLevel(level);
+    });
+  });
+
+  // ===== Course Notes Toggle =====
+  const btnClean = document.getElementById('btnClean');
+  const btnRaw = document.getElementById('btnRaw');
+  const notesClean = document.getElementById('notesClean');
+  const notesRaw = document.getElementById('notesRaw');
+
+  btnClean.addEventListener('click', function () {
+    btnClean.classList.add('active');
+    btnRaw.classList.remove('active');
+    notesClean.style.display = 'block';
+    notesRaw.style.display = 'none';
+  });
+
+  btnRaw.addEventListener('click', function () {
+    btnRaw.classList.add('active');
+    btnClean.classList.remove('active');
+    notesRaw.style.display = 'block';
+    notesClean.style.display = 'none';
+  });
+
+  // Load content.txt
+  fetch('content.txt')
+    .then(r => r.ok ? r.text() : Promise.reject('not found'))
+    .then(text => { notesRaw.textContent = text || '(空文件)'; })
+    .catch(() => { notesRaw.textContent = '无法加载 content.txt'; });
+
+  // ===== Init =====
+  loadLevel(1);
+
+})();
+</script>
+
+</body>
+</html>

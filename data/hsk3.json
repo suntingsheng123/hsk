@@ -1,0 +1,88 @@
+{
+  "level": 3,
+  "totalWords": 600,
+  "categories": [
+    {
+      "name": "职业工作",
+      "icon": "💼",
+      "words": [
+        { "zh": "经理", "pinyin": "jīnglǐ", "en": "manager", "example": "他是公司的经理。" },
+        { "zh": "律师", "pinyin": "lǜshī", "en": "lawyer", "example": "她想当律师。" },
+        { "zh": "记者", "pinyin": "jìzhě", "en": "journalist", "example": "记者在采访。" },
+        { "zh": "护士", "pinyin": "hùshi", "en": "nurse", "example": "护士照顾病人。" },
+        { "zh": "司机", "pinyin": "sījī", "en": "driver", "example": "司机开车很小心。" },
+        { "zh": "会议", "pinyin": "huìyì", "en": "meeting", "example": "下午有一个会议。" },
+        { "zh": "办公室", "pinyin": "bàngōngshì", "en": "office", "example": "他在办公室工作。" },
+        { "zh": "加班", "pinyin": "jiābān", "en": "to work overtime", "example": "他经常加班。" }
+      ]
+    },
+    {
+      "name": "情感表达",
+      "icon": "💭",
+      "words": [
+        { "zh": "高兴", "pinyin": "gāoxìng", "en": "happy", "example": "见到你很高兴。" },
+        { "zh": "难过", "pinyin": "nánguò", "en": "sad", "example": "她很难过。" },
+        { "zh": "生气", "pinyin": "shēngqì", "en": "angry", "example": "他生气了。" },
+        { "zh": "担心", "pinyin": "dānxīn", "en": "to worry", "example": "妈妈很担心我。" },
+        { "zh": "害怕", "pinyin": "hàipà", "en": "afraid", "example": "我害怕蛇。" },
+        { "zh": "着急", "pinyin": "zháojí", "en": "anxious", "example": "别着急，慢慢来。" },
+        { "zh": "满意", "pinyin": "mǎnyì", "en": "satisfied", "example": "老板很满意。" },
+        { "zh": "放心", "pinyin": "fàngxīn", "en": "to feel relieved", "example": "你放心吧。" }
+      ]
+    },
+    {
+      "name": "教育学习",
+      "icon": "📚",
+      "words": [
+        { "zh": "数学", "pinyin": "shùxué", "en": "math", "example": "我喜欢数学。" },
+        { "zh": "历史", "pinyin": "lìshǐ", "en": "history", "example": "中国历史很长。" },
+        { "zh": "文化", "pinyin": "wénhuà", "en": "culture", "example": "中国文化很有意思。" },
+        { "zh": "练习", "pinyin": "liànxí", "en": "to practice", "example": "多练习汉字。" },
+        { "zh": "复习", "pinyin": "fùxí", "en": "to review", "example": "考试前要复习。" },
+        { "zh": "作业", "pinyin": "zuòyè", "en": "homework", "example": "今天作业很多。" },
+        { "zh": "成绩", "pinyin": "chéngjì", "en": "grades / results", "example": "他的成绩很好。" },
+        { "zh": "毕业", "pinyin": "bìyè", "en": "to graduate", "example": "她今年毕业。" }
+      ]
+    },
+    {
+      "name": "饮食烹饪",
+      "icon": "🍳",
+      "words": [
+        { "zh": "饺子", "pinyin": "jiǎozi", "en": "dumpling", "example": "我们一起包饺子。" },
+        { "zh": "面条", "pinyin": "miàntiáo", "en": "noodles", "example": "他喜欢吃面条。" },
+        { "zh": "啤酒", "pinyin": "píjiǔ", "en": "beer", "example": "来一瓶啤酒。" },
+        { "zh": "蛋糕", "pinyin": "dàngāo", "en": "cake", "example": "生日蛋糕很好吃。" },
+        { "zh": "新鲜", "pinyin": "xīnxiān", "en": "fresh", "example": "这些水果很新鲜。" },
+        { "zh": "甜", "pinyin": "tián", "en": "sweet", "example": "这个蛋糕很甜。" },
+        { "zh": "咸", "pinyin": "xián", "en": "salty", "example": "汤太咸了。" },
+        { "zh": "辣", "pinyin": "là", "en": "spicy", "example": "四川菜很辣。" }
+      ]
+    },
+    {
+      "name": "社交关系",
+      "icon": "🤝",
+      "words": [
+        { "zh": "邻居", "pinyin": "línjū", "en": "neighbor", "example": "我的邻居很友好。" },
+        { "zh": "同事", "pinyin": "tóngshì", "en": "colleague", "example": "他是我的同事。" },
+        { "zh": "客人", "pinyin": "kèrén", "en": "guest", "example": "家里来了客人。" },
+        { "zh": "朋友", "pinyin": "péngyou", "en": "friend", "example": "他是我最好的朋友。" },
+        { "zh": "关系", "pinyin": "guānxi", "en": "relationship", "example": "他们关系很好。" },
+        { "zh": "约会", "pinyin": "yuēhuì", "en": "date / appointment", "example": "我有一个约会。" }
+      ]
+    },
+    {
+      "name": "自然环境",
+      "icon": "🌿",
+      "words": [
+        { "zh": "河", "pinyin": "hé", "en": "river", "example": "长江是一条大河。" },
+        { "zh": "山", "pinyin": "shān", "en": "mountain", "example": "那座山很高。" },
+        { "zh": "树", "pinyin": "shù", "en": "tree", "example": "公园里有很多树。" },
+        { "zh": "花", "pinyin": "huā", "en": "flower", "example": "这朵花很美。" },
+        { "zh": "动物", "pinyin": "dòngwù", "en": "animal", "example": "我喜欢小动物。" },
+        { "zh": "太阳", "pinyin": "tàiyáng", "en": "sun", "example": "太阳出来了。" },
+        { "zh": "月亮", "pinyin": "yuèliang", "en": "moon", "example": "今晚月亮很圆。" },
+        { "zh": "空气", "pinyin": "kōngqì", "en": "air", "example": "这里的空气很好。" }
+      ]
+    }
+  ]
+}

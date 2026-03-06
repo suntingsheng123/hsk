@@ -1,0 +1,190 @@
+{
+  "level": 1,
+  "totalWords": 150,
+  "categories": [
+    {
+      "name": "家庭称呼",
+      "nameEn": "Family",
+      "icon": "👨‍👩‍👧",
+      "words": [
+        { "zh": "爸爸", "pinyin": "bàba", "en": "father", "example": "我爸爸很高。" },
+        { "zh": "妈妈", "pinyin": "māma", "en": "mother", "example": "妈妈做饭很好吃。" },
+        { "zh": "爷爷", "pinyin": "yéye", "en": "grandpa (paternal)", "example": "爷爷今年七十岁。" },
+        { "zh": "奶奶", "pinyin": "nǎinai", "en": "grandma (paternal)", "example": "奶奶喜欢喝茶。" },
+        { "zh": "哥哥", "pinyin": "gēge", "en": "elder brother", "example": "哥哥在北京工作。" },
+        { "zh": "姐姐", "pinyin": "jiějie", "en": "elder sister", "example": "姐姐是老师。" },
+        { "zh": "弟弟", "pinyin": "dìdi", "en": "younger brother", "example": "弟弟在上学。" },
+        { "zh": "妹妹", "pinyin": "mèimei", "en": "younger sister", "example": "妹妹很可爱。" },
+        { "zh": "儿子", "pinyin": "érzi", "en": "son", "example": "他有一个儿子。" },
+        { "zh": "女儿", "pinyin": "nǚ'ér", "en": "daughter", "example": "她女儿很聪明。" }
+      ]
+    },
+    {
+      "name": "代词",
+      "nameEn": "Pronouns",
+      "icon": "👤",
+      "words": [
+        { "zh": "我", "pinyin": "wǒ", "en": "I / me", "example": "我是学生。" },
+        { "zh": "你", "pinyin": "nǐ", "en": "you", "example": "你好！" },
+        { "zh": "他", "pinyin": "tā", "en": "he / him", "example": "他是我朋友。" },
+        { "zh": "她", "pinyin": "tā", "en": "she / her", "example": "她很漂亮。" },
+        { "zh": "我们", "pinyin": "wǒmen", "en": "we / us", "example": "我们是同学。" },
+        { "zh": "你们", "pinyin": "nǐmen", "en": "you (plural)", "example": "你们好！" },
+        { "zh": "他们", "pinyin": "tāmen", "en": "they / them", "example": "他们在学校。" },
+        { "zh": "这", "pinyin": "zhè", "en": "this", "example": "这是什么？" },
+        { "zh": "那", "pinyin": "nà", "en": "that", "example": "那是我的书。" }
+      ]
+    },
+    {
+      "name": "问候寒暄",
+      "nameEn": "Greetings",
+      "icon": "👋",
+      "words": [
+        { "zh": "你好", "pinyin": "nǐ hǎo", "en": "hello", "example": "你好，我叫小明。" },
+        { "zh": "您好", "pinyin": "nín hǎo", "en": "hello (polite)", "example": "老师，您好！" },
+        { "zh": "谢谢", "pinyin": "xièxie", "en": "thanks", "example": "谢谢你的帮助。" },
+        { "zh": "不客气", "pinyin": "bú kèqi", "en": "you're welcome", "example": "不客气，应该的。" },
+        { "zh": "对不起", "pinyin": "duìbuqǐ", "en": "sorry", "example": "对不起，我来晚了。" },
+        { "zh": "没关系", "pinyin": "méi guānxi", "en": "it's okay", "example": "没关系，不要担心。" },
+        { "zh": "再见", "pinyin": "zàijiàn", "en": "goodbye", "example": "明天见，再见！" },
+        { "zh": "请", "pinyin": "qǐng", "en": "please", "example": "请坐。" }
+      ]
+    },
+    {
+      "name": "数字时间",
+      "nameEn": "Numbers & Time",
+      "icon": "🔢",
+      "words": [
+        { "zh": "一", "pinyin": "yī", "en": "one", "example": "我有一本书。" },
+        { "zh": "二", "pinyin": "èr", "en": "two", "example": "二加三等于五。" },
+        { "zh": "三", "pinyin": "sān", "en": "three", "example": "三个人。" },
+        { "zh": "十", "pinyin": "shí", "en": "ten", "example": "十块钱。" },
+        { "zh": "百", "pinyin": "bǎi", "en": "hundred", "example": "一百个学生。" },
+        { "zh": "今天", "pinyin": "jīntiān", "en": "today", "example": "今天天气很好。" },
+        { "zh": "明天", "pinyin": "míngtiān", "en": "tomorrow", "example": "明天我去上学。" },
+        { "zh": "昨天", "pinyin": "zuótiān", "en": "yesterday", "example": "昨天下雨了。" },
+        { "zh": "现在", "pinyin": "xiànzài", "en": "now", "example": "现在几点？" },
+        { "zh": "年", "pinyin": "nián", "en": "year", "example": "今年是2024年。" }
+      ]
+    },
+    {
+      "name": "日常动作",
+      "nameEn": "Daily Actions",
+      "icon": "🏃",
+      "words": [
+        { "zh": "吃", "pinyin": "chī", "en": "to eat", "example": "我吃米饭。" },
+        { "zh": "喝", "pinyin": "hē", "en": "to drink", "example": "他喝水。" },
+        { "zh": "看", "pinyin": "kàn", "en": "to look / to watch", "example": "我看电视。" },
+        { "zh": "听", "pinyin": "tīng", "en": "to listen", "example": "听音乐。" },
+        { "zh": "说", "pinyin": "shuō", "en": "to speak", "example": "你说中文吗？" },
+        { "zh": "读", "pinyin": "dú", "en": "to read", "example": "我读书。" },
+        { "zh": "写", "pinyin": "xiě", "en": "to write", "example": "写汉字。" },
+        { "zh": "去", "pinyin": "qù", "en": "to go", "example": "我去学校。" },
+        { "zh": "来", "pinyin": "lái", "en": "to come", "example": "请来这里。" },
+        { "zh": "买", "pinyin": "mǎi", "en": "to buy", "example": "我买苹果。" }
+      ]
+    },
+    {
+      "name": "小笼包",
+      "nameEn": "Soup Dumplings",
+      "icon": "🧆",
+      "words": [
+        { "zh": "小笼包", "pinyin": "xiǎolóngbāo", "en": "soup dumpling", "example": "上海的小笼包最有名。" },
+        { "zh": "汤汁", "pinyin": "tāngzhī", "en": "soup / broth (inside)", "example": "小笼包里面汤汁很多。" },
+        { "zh": "肉皮冻", "pinyin": "ròupídòng", "en": "meat aspic / jelly", "example": "肉皮冻蒸熟后变成汤汁。" },
+        { "zh": "猪肉", "pinyin": "zhūròu", "en": "pork", "example": "经典小笼包是猪肉馅的。" },
+        { "zh": "蟹黄", "pinyin": "xièhuáng", "en": "crab roe", "example": "蟹黄小笼包特别鲜。" },
+        { "zh": "虾仁", "pinyin": "xiārén", "en": "shrimp meat", "example": "虾仁小笼包也很好吃。" },
+        { "zh": "皮薄", "pinyin": "pí báo", "en": "thin wrapper", "example": "小笼包皮薄汤多。" },
+        { "zh": "蘸", "pinyin": "zhàn", "en": "to dip", "example": "小笼包蘸醋和姜丝吃。" },
+        { "zh": "姜丝", "pinyin": "jiāngsī", "en": "shredded ginger", "example": "吃小笼包要配姜丝。" },
+        { "zh": "南翔", "pinyin": "Nánxiáng", "en": "Nanxiang (origin place)", "example": "南翔小笼包是上海名小吃。" }
+      ]
+    },
+    {
+      "name": "灌汤包",
+      "nameEn": "Soup-filled Buns",
+      "icon": "🫕",
+      "words": [
+        { "zh": "灌汤包", "pinyin": "guàntāngbāo", "en": "soup-filled bun", "example": "开封灌汤包很有名。" },
+        { "zh": "汤", "pinyin": "tāng", "en": "soup", "example": "灌汤包的汤比小笼包更多。" },
+        { "zh": "吸管", "pinyin": "xīguǎn", "en": "straw", "example": "有人用吸管喝灌汤包的汤。" },
+        { "zh": "咬", "pinyin": "yǎo", "en": "to bite", "example": "先咬一个小口，再喝汤。" },
+        { "zh": "烫", "pinyin": "tàng", "en": "scalding hot", "example": "小心，灌汤包很烫！" },
+        { "zh": "牛肉", "pinyin": "niúròu", "en": "beef", "example": "牛肉灌汤包也很好吃。" },
+        { "zh": "三鲜", "pinyin": "sānxiān", "en": "three delicacies", "example": "三鲜灌汤包有虾仁、猪肉和韭菜。" },
+        { "zh": "韧", "pinyin": "rèn", "en": "chewy / elastic", "example": "灌汤包的皮很有韧性。" },
+        { "zh": "开封", "pinyin": "Kāifēng", "en": "Kaifeng (origin city)", "example": "开封是灌汤包的发源地。" }
+      ]
+    },
+    {
+      "name": "北方包子",
+      "nameEn": "Northern Steamed Buns",
+      "icon": "🥟",
+      "words": [
+        { "zh": "包子", "pinyin": "bāozi", "en": "steamed stuffed bun", "example": "北方的包子个头很大。" },
+        { "zh": "蒸", "pinyin": "zhēng", "en": "to steam", "example": "包子要蒸十五分钟。" },
+        { "zh": "笼", "pinyin": "lóng", "en": "steamer basket", "example": "一笼包子有六个。" },
+        { "zh": "猪肉大葱", "pinyin": "zhūròu dàcōng", "en": "pork & green onion", "example": "猪肉大葱是最经典的包子馅。" },
+        { "zh": "猪肉白菜", "pinyin": "zhūròu báicài", "en": "pork & napa cabbage", "example": "冬天最常吃猪肉白菜包子。" },
+        { "zh": "牛肉大葱", "pinyin": "niúròu dàcōng", "en": "beef & green onion", "example": "牛肉大葱包子很香。" },
+        { "zh": "羊肉胡萝卜", "pinyin": "yángròu húluóbo", "en": "lamb & carrot", "example": "西北人喜欢吃羊肉胡萝卜包子。" },
+        { "zh": "酸菜猪肉", "pinyin": "suāncài zhūròu", "en": "pickled cabbage & pork", "example": "酸菜猪肉包子是东北特色。" },
+        { "zh": "韭菜鸡蛋", "pinyin": "jiǔcài jīdàn", "en": "chive & egg", "example": "韭菜鸡蛋包子是素馅的。" },
+        { "zh": "豆沙", "pinyin": "dòushā", "en": "red bean paste", "example": "豆沙包子是甜的。" },
+        { "zh": "馅儿", "pinyin": "xiànr", "en": "filling / stuffing", "example": "你喜欢什么馅儿的包子？" },
+        { "zh": "皮", "pinyin": "pí", "en": "wrapper / dough skin", "example": "北方包子皮又厚又松软。" },
+        { "zh": "狗不理", "pinyin": "Gǒubùlǐ", "en": "Goubuli (famous brand)", "example": "天津狗不理包子很有名。" }
+      ]
+    },
+    {
+      "name": "饺子",
+      "nameEn": "Dumplings",
+      "icon": "🥟",
+      "words": [
+        { "zh": "饺子", "pinyin": "jiǎozi", "en": "dumpling", "example": "过年我们一起包饺子。" },
+        { "zh": "包", "pinyin": "bāo", "en": "to wrap / to make", "example": "妈妈教我包饺子。" },
+        { "zh": "饺子皮", "pinyin": "jiǎozi pí", "en": "dumpling wrapper", "example": "饺子皮要擀得又圆又薄。" },
+        { "zh": "擀", "pinyin": "gǎn", "en": "to roll (dough)", "example": "爸爸擀饺子皮很快。" },
+        { "zh": "馅儿", "pinyin": "xiànr", "en": "filling", "example": "饺子馅儿要调好味。" },
+        { "zh": "煮", "pinyin": "zhǔ", "en": "to boil", "example": "水开了再下饺子煮。" },
+        { "zh": "蒸饺", "pinyin": "zhēngjiǎo", "en": "steamed dumpling", "example": "蒸饺的皮是透明的。" },
+        { "zh": "煎饺", "pinyin": "jiānjiǎo", "en": "pan-fried dumpling", "example": "煎饺底部金黄酥脆。" },
+        { "zh": "醋", "pinyin": "cù", "en": "vinegar", "example": "吃饺子要蘸醋。" },
+        { "zh": "蘸", "pinyin": "zhàn", "en": "to dip", "example": "饺子蘸醋和蒜泥最好吃。" },
+        { "zh": "蒜泥", "pinyin": "suànní", "en": "mashed garlic", "example": "北方人吃饺子离不开蒜泥。" },
+        { "zh": "过年", "pinyin": "guònián", "en": "to celebrate New Year", "example": "过年吃饺子是北方的传统。" }
+      ]
+    },
+    {
+      "name": "其他食物饮品",
+      "nameEn": "Other Food & Drinks",
+      "icon": "🍜",
+      "words": [
+        { "zh": "馒头", "pinyin": "mántou", "en": "steamed bun (plain)", "example": "北方人喜欢吃馒头。" },
+        { "zh": "米饭", "pinyin": "mǐfàn", "en": "rice", "example": "南方人喜欢吃米饭。" },
+        { "zh": "面条", "pinyin": "miàntiáo", "en": "noodles", "example": "他喜欢吃面条。" },
+        { "zh": "水", "pinyin": "shuǐ", "en": "water", "example": "请喝水。" },
+        { "zh": "茶", "pinyin": "chá", "en": "tea", "example": "中国茶很好喝。" },
+        { "zh": "苹果", "pinyin": "píngguǒ", "en": "apple", "example": "我喜欢吃苹果。" },
+        { "zh": "菜", "pinyin": "cài", "en": "vegetable / dish", "example": "这个菜很好吃。" },
+        { "zh": "水果", "pinyin": "shuǐguǒ", "en": "fruit", "example": "我喜欢吃水果。" }
+      ]
+    },
+    {
+      "name": "常用形容词",
+      "nameEn": "Common Adjectives",
+      "icon": "🌟",
+      "words": [
+        { "zh": "好", "pinyin": "hǎo", "en": "good", "example": "这本书很好。" },
+        { "zh": "大", "pinyin": "dà", "en": "big", "example": "中国很大。" },
+        { "zh": "小", "pinyin": "xiǎo", "en": "small", "example": "我的狗很小。" },
+        { "zh": "多", "pinyin": "duō", "en": "many / much", "example": "人很多。" },
+        { "zh": "少", "pinyin": "shǎo", "en": "few / little", "example": "水很少。" },
+        { "zh": "热", "pinyin": "rè", "en": "hot", "example": "今天很热。" },
+        { "zh": "冷", "pinyin": "lěng", "en": "cold", "example": "冬天很冷。" },
+        { "zh": "高兴", "pinyin": "gāoxìng", "en": "happy", "example": "我很高兴。" }
+      ]
+    }
+  ]
+}

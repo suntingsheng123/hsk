@@ -1,0 +1,87 @@
+{
+  "level": 5,
+  "totalWords": 2500,
+  "categories": [
+    {
+      "name": "学术研究",
+      "icon": "🎓",
+      "words": [
+        { "zh": "研究", "pinyin": "yánjiū", "en": "research", "example": "他在研究中国历史。" },
+        { "zh": "理论", "pinyin": "lǐlùn", "en": "theory", "example": "这个理论很重要。" },
+        { "zh": "分析", "pinyin": "fēnxī", "en": "to analyze", "example": "我们需要分析这个问题。" },
+        { "zh": "结论", "pinyin": "jiélùn", "en": "conclusion", "example": "你的结论是什么？" },
+        { "zh": "实验", "pinyin": "shíyàn", "en": "experiment", "example": "这个实验很成功。" },
+        { "zh": "现象", "pinyin": "xiànxiàng", "en": "phenomenon", "example": "这是一个有趣的现象。" },
+        { "zh": "观点", "pinyin": "guāndiǎn", "en": "viewpoint", "example": "每个人都有自己的观点。" },
+        { "zh": "论文", "pinyin": "lùnwén", "en": "thesis / paper", "example": "他在写论文。" }
+      ]
+    },
+    {
+      "name": "哲学思辨",
+      "icon": "☯️",
+      "words": [
+        { "zh": "道德", "pinyin": "dàodé", "en": "morality", "example": "道德是社会的基础。" },
+        { "zh": "哲学", "pinyin": "zhéxué", "en": "philosophy", "example": "他学的是哲学。" },
+        { "zh": "思想", "pinyin": "sīxiǎng", "en": "thought / ideology", "example": "他的思想很深刻。" },
+        { "zh": "矛盾", "pinyin": "máodùn", "en": "contradiction", "example": "这两个观点有矛盾。" },
+        { "zh": "本质", "pinyin": "běnzhì", "en": "essence / nature", "example": "我们要看事情的本质。" },
+        { "zh": "抽象", "pinyin": "chōuxiàng", "en": "abstract", "example": "这个概念太抽象了。" },
+        { "zh": "客观", "pinyin": "kèguān", "en": "objective", "example": "我们要客观地看问题。" },
+        { "zh": "主观", "pinyin": "zhǔguān", "en": "subjective", "example": "不要太主观。" }
+      ]
+    },
+    {
+      "name": "政治外交",
+      "icon": "🏛️",
+      "words": [
+        { "zh": "政治", "pinyin": "zhèngzhì", "en": "politics", "example": "他对政治很感兴趣。" },
+        { "zh": "外交", "pinyin": "wàijiāo", "en": "diplomacy", "example": "外交关系很重要。" },
+        { "zh": "民主", "pinyin": "mínzhǔ", "en": "democracy", "example": "民主是一种制度。" },
+        { "zh": "和平", "pinyin": "hépíng", "en": "peace", "example": "世界需要和平。" },
+        { "zh": "国际", "pinyin": "guójì", "en": "international", "example": "这是国际会议。" },
+        { "zh": "领导", "pinyin": "lǐngdǎo", "en": "leader / to lead", "example": "他是公司的领导。" },
+        { "zh": "政策", "pinyin": "zhèngcè", "en": "policy", "example": "新政策出来了。" }
+      ]
+    },
+    {
+      "name": "文学艺术",
+      "icon": "🖌️",
+      "words": [
+        { "zh": "文学", "pinyin": "wénxué", "en": "literature", "example": "她喜欢中国文学。" },
+        { "zh": "诗歌", "pinyin": "shīgē", "en": "poetry", "example": "唐诗是中国诗歌的代表。" },
+        { "zh": "小说", "pinyin": "xiǎoshuō", "en": "novel", "example": "这本小说很好看。" },
+        { "zh": "艺术", "pinyin": "yìshù", "en": "art", "example": "他对艺术很有兴趣。" },
+        { "zh": "创作", "pinyin": "chuàngzuò", "en": "to create / creation", "example": "他正在创作一首诗。" },
+        { "zh": "作品", "pinyin": "zuòpǐn", "en": "work (of art)", "example": "这是他的新作品。" },
+        { "zh": "欣赏", "pinyin": "xīnshǎng", "en": "to appreciate", "example": "我们一起欣赏音乐。" }
+      ]
+    },
+    {
+      "name": "环境生态",
+      "icon": "🌍",
+      "words": [
+        { "zh": "环境", "pinyin": "huánjìng", "en": "environment", "example": "保护环境很重要。" },
+        { "zh": "污染", "pinyin": "wūrǎn", "en": "pollution", "example": "空气污染越来越严重。" },
+        { "zh": "资源", "pinyin": "zīyuán", "en": "resources", "example": "我们要节约资源。" },
+        { "zh": "能源", "pinyin": "néngyuán", "en": "energy", "example": "新能源很重要。" },
+        { "zh": "生态", "pinyin": "shēngtài", "en": "ecology", "example": "生态平衡很重要。" },
+        { "zh": "回收", "pinyin": "huíshōu", "en": "to recycle", "example": "垃圾要分类回收。" },
+        { "zh": "可持续", "pinyin": "kě chíxù", "en": "sustainable", "example": "可持续发展是目标。" }
+      ]
+    },
+    {
+      "name": "成语俗语",
+      "icon": "📜",
+      "words": [
+        { "zh": "一举两得", "pinyin": "yì jǔ liǎng dé", "en": "kill two birds with one stone", "example": "这个方法一举两得。" },
+        { "zh": "自言自语", "pinyin": "zì yán zì yǔ", "en": "to talk to oneself", "example": "他在自言自语。" },
+        { "zh": "半途而废", "pinyin": "bàn tú ér fèi", "en": "to give up halfway", "example": "做事不要半途而废。" },
+        { "zh": "不可思议", "pinyin": "bù kě sī yì", "en": "incredible", "example": "这件事不可思议。" },
+        { "zh": "入乡随俗", "pinyin": "rù xiāng suí sú", "en": "when in Rome, do as the Romans do", "example": "入乡随俗，要尊重当地文化。" },
+        { "zh": "脚踏实地", "pinyin": "jiǎo tà shí dì", "en": "down-to-earth", "example": "做事要脚踏实地。" },
+        { "zh": "刻苦", "pinyin": "kèkǔ", "en": "hardworking", "example": "他学习很刻苦。" },
+        { "zh": "恍然大悟", "pinyin": "huǎng rán dà wù", "en": "to suddenly realize", "example": "他恍然大悟。" }
+      ]
+    }
+  ]
+}
