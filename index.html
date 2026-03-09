@@ -1454,8 +1454,8 @@ ruby rt {
       if (currentData.lessons) {
         renderLessonNav(currentData);
         lessonNav.classList.add('visible');
-        // Default to Lesson 2 (first lesson with words)
-        loadLesson(2);
+        // Default to showing all lessons
+        loadAllLessons();
       } else {
         lessonNav.classList.remove('visible');
         renderCategories(currentData.categories, levelColors[currentData.level]);
@@ -1550,6 +1550,12 @@ ruby rt {
 
     renderCategories(lesson.categories, levelColors[currentLevel]);
     renderCategoryTags(lesson.categories);
+    scrollToPanels();
+  }
+
+  // ===== Scroll to panels area =====
+  function scrollToPanels() {
+    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   // ===== Load all lessons =====
@@ -1584,6 +1590,7 @@ ruby rt {
       const foodData = await resp.json();
       renderCategories(foodData.categories, levelColors[currentLevel]);
       renderCategoryTags(foodData.categories);
+      scrollToPanels();
     } catch (err) {
       loading.textContent = '美食专题加载失败。';
       console.error(err);
