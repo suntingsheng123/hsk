@@ -394,6 +394,11 @@ ruby rt {
   color: var(--seal-red);
 }
 
+.lesson-tab rt {
+  font-size: 0.55em;
+  color: var(--seal-red);
+}
+
 /* ===== Comic Panel Grid ===== */
 .panels-container {
   max-width: 1200px;
@@ -1471,11 +1476,20 @@ ruby rt {
   function renderLessonNav(data) {
     lessonNav.innerHTML = '';
 
+    // Helper: render ruby array to HTML
+    function rubyHtml(arr) {
+      return arr.map(([ch, py]) => `<ruby>${ch}<rt>${py}</rt></ruby>`).join('');
+    }
+
+    // Number to Chinese digit
+    const numZh = ['','一','二','三','四','五','六','七','八','九','十'];
+    const numPy = ['','yī','èr','sān','sì','wǔ','liù','qī','bā','jiǔ','shí'];
+
     // "All" tab
     const allTab = document.createElement('button');
     allTab.className = 'lesson-tab';
     allTab.dataset.lesson = 'all';
-    allTab.innerHTML = '<span class="lesson-tab-icon">📚</span> 全部 All';
+    allTab.innerHTML = '<span class="lesson-tab-icon">📚</span> <ruby>全<rt>quán</rt></ruby><ruby>部<rt>bù</rt></ruby> All';
     allTab.addEventListener('click', () => loadAllLessons());
     lessonNav.appendChild(allTab);
 
@@ -1486,7 +1500,10 @@ ruby rt {
       tab.dataset.lesson = lesson.id;
       const wordCount = lesson.categories.reduce((sum, c) => sum + c.words.length, 0);
       const countLabel = wordCount > 0 ? ` (${wordCount})` : '';
-      tab.innerHTML = `<span class="lesson-tab-icon">${lesson.icon}</span> 第${lesson.id}课 · ${lesson.title} ${lesson.titleEn}${countLabel}`;
+      const titleRuby = lesson.titleRuby ? rubyHtml(lesson.titleRuby) : lesson.title;
+      const n = lesson.id;
+      const lessonNumRuby = `<ruby>第<rt>dì</rt></ruby><ruby>${numZh[n]}<rt>${numPy[n]}</rt></ruby><ruby>课<rt>kè</rt></ruby>`;
+      tab.innerHTML = `<span class="lesson-tab-icon">${lesson.icon}</span> ${lessonNumRuby} · ${titleRuby} ${lesson.titleEn}${countLabel}`;
       tab.addEventListener('click', () => loadLesson(lesson.id));
       lessonNav.appendChild(tab);
     });
@@ -1495,7 +1512,7 @@ ruby rt {
     const foodTab = document.createElement('button');
     foodTab.className = 'lesson-tab';
     foodTab.dataset.lesson = 'food';
-    foodTab.innerHTML = '<span class="lesson-tab-icon">🍜</span> 美食专题 Food Special';
+    foodTab.innerHTML = '<span class="lesson-tab-icon">🍜</span> <ruby>美<rt>měi</rt></ruby><ruby>食<rt>shí</rt></ruby><ruby>专<rt>zhuān</rt></ruby><ruby>题<rt>tí</rt></ruby> Food Special';
     foodTab.addEventListener('click', () => loadFoodSpecial());
     lessonNav.appendChild(foodTab);
   }
