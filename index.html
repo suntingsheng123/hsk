@@ -120,6 +120,13 @@ body::after {
   letter-spacing: 0.1em;
 }
 
+/* ===== Sticky Nav Wrapper ===== */
+.nav-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 /* ===== Chapter Navigation ===== */
 .chapter-nav {
   display: flex;
@@ -128,9 +135,6 @@ body::after {
   gap: 0;
   padding: 0 20px;
   background: var(--ink);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .chapter-tab {
@@ -799,9 +803,6 @@ ruby rt {
   border-bottom: 2px solid var(--ink);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  position: sticky;
-  top: 52px;
-  z-index: 99;
 }
 
 .lesson-nav.visible {
@@ -848,9 +849,6 @@ ruby rt {
 }
 
 @media (max-width: 768px) {
-  .lesson-nav {
-    top: 42px;
-  }
   .lesson-tab {
     padding: 6px 12px;
     font-size: 0.75rem;
@@ -1099,7 +1097,8 @@ ruby rt {
   <p class="header-subtitle"><ruby>汉<rt>hàn</rt></ruby><ruby>语<rt>yǔ</rt></ruby><ruby>水<rt>shuǐ</rt></ruby><ruby>平<rt>píng</rt></ruby><ruby>考<rt>kǎo</rt></ruby><ruby>试<rt>shì</rt></ruby> · <ruby>第<rt>dì</rt></ruby><ruby>一<rt>yī</rt></ruby><ruby>级<rt>jí</rt></ruby><ruby>词<rt>cí</rt></ruby><ruby>汇<rt>huì</rt></ruby><ruby>图<rt>tú</rt></ruby><ruby>鉴<rt>jiàn</rt></ruby></p>
 </header>
 
-<!-- ===== Chapter Navigation ===== -->
+<!-- ===== Sticky Nav Wrapper ===== -->
+<div class="nav-sticky-wrapper">
 <nav class="chapter-nav">
   <button class="chapter-tab active" data-level="1" style="--accent: var(--hsk1)">
     <ruby>第<rt>dì</rt></ruby><ruby>一<rt>yī</rt></ruby><ruby>章<rt>zhāng</rt></ruby> · HSK 1
@@ -1125,6 +1124,7 @@ ruby rt {
 
 <!-- ===== Lesson Sub-Navigation ===== -->
 <nav class="lesson-nav visible" id="lessonNav"></nav>
+</div>
 
 <!-- ===== Search Bar ===== -->
 <div class="search-bar">
