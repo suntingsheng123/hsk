@@ -789,6 +789,74 @@ ruby rt {
   .modal-zh { font-size: 3.5rem; }
 }
 
+/* ===== Lesson Sub-Navigation ===== */
+.lesson-nav {
+  display: none;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 0 20px;
+  background: #E8E0D4;
+  border-bottom: 2px solid var(--ink);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: sticky;
+  top: 52px;
+  z-index: 99;
+}
+
+.lesson-nav.visible {
+  display: flex;
+}
+
+.lesson-tab {
+  padding: 8px 18px;
+  font-family: var(--font-kai);
+  font-size: 0.82rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  white-space: nowrap;
+  opacity: 0.7;
+}
+
+.lesson-tab:hover {
+  opacity: 1;
+  background: rgba(44,24,16,0.06);
+}
+
+.lesson-tab.active {
+  opacity: 1;
+  font-weight: 700;
+  background: var(--paper);
+}
+
+.lesson-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 2px;
+  background: var(--seal-red);
+}
+
+.lesson-tab .lesson-tab-icon {
+  margin-right: 4px;
+}
+
+@media (max-width: 768px) {
+  .lesson-nav {
+    top: 42px;
+  }
+  .lesson-tab {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}
+
 /* ===== Loading ===== */
 .loading {
   text-align: center;
@@ -1054,6 +1122,9 @@ ruby rt {
     <span class="tab-detail">2500 words · Proficient ★★★★★</span>
   </button>
 </nav>
+
+<!-- ===== Lesson Sub-Navigation ===== -->
+<nav class="lesson-nav visible" id="lessonNav"></nav>
 
 <!-- ===== Search Bar ===== -->
 <div class="search-bar">
@@ -1351,6 +1422,7 @@ ruby rt {
 
   let currentLevel = 1;
   let currentData = null;
+  let currentLessonId = null; // null = "all", 'food' = food special
   let allPanels = [];
 
   const container = document.getElementById('panelsContainer');
@@ -1359,32 +1431,152 @@ ruby rt {
   const searchInput = document.getElementById('searchInput');
   const modal = document.getElementById('modal');
   const categoryTags = document.getElementById('categoryTags');
+  const lessonNav = document.getElementById('lessonNav');
 
   // ===== Data Loading =====
   async function loadLevel(level) {
     loading.style.display = 'block';
     noResults.style.display = 'none';
-
-    // Remove existing panels
-    container.querySelectorAll('.category-divider, .panels-grid').forEach(el => el.remove());
+    clearPanels();
 
     try {
       const resp = await fetch(`data/hsk${level}.json`);
       if (!resp.ok) throw new Error('Failed to load');
       currentData = await resp.json();
       currentLevel = level;
-      renderPanels(currentData);
-      renderCategoryTags(currentData);
+
+      // Show lesson nav only for levels that have lessons
+      if (currentData.lessons) {
+        renderLessonNav(currentData);
+        lessonNav.classList.add('visible');
+        // Default to Lesson 2 (first lesson with words)
+        loadLesson(2);
+      } else {
+        lessonNav.classList.remove('visible');
+        renderCategories(currentData.categories, levelColors[currentData.level]);
+        renderCategoryTags(currentData.categories);
+      }
     } catch (err) {
       loading.textContent = '加载失败，请确保通过 HTTP 服务器访问本页面。';
       console.error(err);
     }
   }
 
+  // ===== Clear panels =====
+  function clearPanels() {
+    container.querySelectorAll('.category-divider, .panels-grid, .lesson-pinyin-hint').forEach(el => el.remove());
+  }
+
+  // ===== Render Lesson Sub-Navigation =====
+  function renderLessonNav(data) {
+    lessonNav.innerHTML = '';
+
+    // "All" tab
+    const allTab = document.createElement('button');
+    allTab.className = 'lesson-tab';
+    allTab.dataset.lesson = 'all';
+    allTab.innerHTML = '<span class="lesson-tab-icon">📚</span> 全部 All';
+    allTab.addEventListener('click', () => loadAllLessons());
+    lessonNav.appendChild(allTab);
+
+    // Individual lesson tabs
+    data.lessons.forEach(lesson => {
+      const tab = document.createElement('button');
+      tab.className = 'lesson-tab';
+      tab.dataset.lesson = lesson.id;
+      const wordCount = lesson.categories.reduce((sum, c) => sum + c.words.length, 0);
+      const countLabel = wordCount > 0 ? ` (${wordCount})` : '';
+      tab.innerHTML = `<span class="lesson-tab-icon">${lesson.icon}</span> 第${lesson.id}课 · ${lesson.title} ${lesson.titleEn}${countLabel}`;
+      tab.addEventListener('click', () => loadLesson(lesson.id));
+      lessonNav.appendChild(tab);
+    });
+
+    // Food special tab
+    const foodTab = document.createElement('button');
+    foodTab.className = 'lesson-tab';
+    foodTab.dataset.lesson = 'food';
+    foodTab.innerHTML = '<span class="lesson-tab-icon">🍜</span> 美食专题 Food Special';
+    foodTab.addEventListener('click', () => loadFoodSpecial());
+    lessonNav.appendChild(foodTab);
+  }
+
+  // ===== Update active lesson tab =====
+  function setActiveLessonTab(lessonId) {
+    lessonNav.querySelectorAll('.lesson-tab').forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.lesson === String(lessonId));
+    });
+  }
+
+  // ===== Load a specific lesson =====
+  function loadLesson(lessonId) {
+    if (!currentData || !currentData.lessons) return;
+    currentLessonId = lessonId;
+    setActiveLessonTab(lessonId);
+    clearPanels();
+    searchInput.value = '';
+
+    const lesson = currentData.lessons.find(l => l.id === lessonId);
+    if (!lesson) return;
+
+    // If lesson has no categories (e.g. Pinyin Basics), show a hint
+    if (lesson.categories.length === 0) {
+      loading.style.display = 'none';
+      const hint = document.createElement('div');
+      hint.className = 'lesson-pinyin-hint';
+      hint.style.cssText = 'text-align:center;padding:40px 20px;font-family:var(--font-kai);font-size:1.1rem;color:#888;';
+      hint.innerHTML = '🔤 本课为拼音入门，没有词汇卡片。<br>请参阅下方 <strong>番外篇 · 拼音速查</strong> 区域。';
+      container.appendChild(hint);
+      allPanels = [];
+      renderCategoryTags([]);
+      return;
+    }
+
+    renderCategories(lesson.categories, levelColors[currentLevel]);
+    renderCategoryTags(lesson.categories);
+  }
+
+  // ===== Load all lessons =====
+  function loadAllLessons() {
+    if (!currentData || !currentData.lessons) return;
+    currentLessonId = 'all';
+    setActiveLessonTab('all');
+    clearPanels();
+    searchInput.value = '';
+
+    const allCategories = [];
+    currentData.lessons.forEach(lesson => {
+      lesson.categories.forEach(cat => allCategories.push(cat));
+    });
+
+    renderCategories(allCategories, levelColors[currentLevel]);
+    renderCategoryTags(allCategories);
+  }
+
+  // ===== Load Food Special =====
+  async function loadFoodSpecial() {
+    currentLessonId = 'food';
+    setActiveLessonTab('food');
+    clearPanels();
+    searchInput.value = '';
+    loading.style.display = 'block';
+    noResults.style.display = 'none';
+
+    try {
+      const resp = await fetch('data/food-special.json');
+      if (!resp.ok) throw new Error('Failed to load food special');
+      const foodData = await resp.json();
+      renderCategories(foodData.categories, levelColors[currentLevel]);
+      renderCategoryTags(foodData.categories);
+    } catch (err) {
+      loading.textContent = '美食专题加载失败。';
+      console.error(err);
+    }
+  }
+
   // ===== Render Category Jump Tags =====
-  function renderCategoryTags(data) {
+  function renderCategoryTags(categories) {
     categoryTags.innerHTML = '';
-    data.categories.forEach((cat, i) => {
+    categories.forEach((cat, i) => {
       const tag = document.createElement('a');
       tag.className = 'cat-tag';
       tag.href = '#cat-' + i;
@@ -1398,7 +1590,6 @@ ruby rt {
 
   // ===== Determine panel span class =====
   function getSpanClass(index, total) {
-    // Create varied comic layout
     if (total <= 3) return '';
     const pattern = index % 7;
     if (pattern === 0) return 'span-col2';
@@ -1406,13 +1597,12 @@ ruby rt {
     return '';
   }
 
-  // ===== Render Panels =====
-  function renderPanels(data) {
+  // ===== Render Categories (shared by lesson / all / food) =====
+  function renderCategories(categories, accent) {
     loading.style.display = 'none';
     allPanels = [];
-    const accent = levelColors[data.level];
 
-    data.categories.forEach((cat, catIdx) => {
+    categories.forEach((cat, catIdx) => {
       // Category divider
       const divider = document.createElement('div');
       divider.className = 'category-divider';

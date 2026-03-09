@@ -1,0 +1,84 @@
+{
+  "title": "美食专题",
+  "titleEn": "Food Special",
+  "titleRuby": [["美","měi"],["食","shí"],["专","zhuān"],["题","tí"]],
+  "icon": "🍜",
+  "categories": [
+    {
+      "name": "小笼包",
+      "nameEn": "Soup Dumplings",
+      "nameRuby": [["小","xiǎo"],["笼","lóng"],["包","bāo"]],
+      "icon": "🧆",
+      "words": [
+        { "zh": "小笼包", "pinyin": "xiǎolóngbāo", "en": "soup dumpling", "example": "上海的小笼包最有名。" },
+        { "zh": "汤汁", "pinyin": "tāngzhī", "en": "soup / broth (inside)", "example": "小笼包里面汤汁很多。" },
+        { "zh": "肉皮冻", "pinyin": "ròupídòng", "en": "meat aspic / jelly", "example": "肉皮冻蒸熟后变成汤汁。" },
+        { "zh": "猪肉", "pinyin": "zhūròu", "en": "pork", "example": "经典小笼包是猪肉馅的。" },
+        { "zh": "蟹黄", "pinyin": "xièhuáng", "en": "crab roe", "example": "蟹黄小笼包特别鲜。" },
+        { "zh": "虾仁", "pinyin": "xiārén", "en": "shrimp meat", "example": "虾仁小笼包也很好吃。" },
+        { "zh": "皮薄", "pinyin": "pí báo", "en": "thin wrapper", "example": "小笼包皮薄汤多。" },
+        { "zh": "蘸", "pinyin": "zhàn", "en": "to dip", "example": "小笼包蘸醋和姜丝吃。" },
+        { "zh": "姜丝", "pinyin": "jiāngsī", "en": "shredded ginger", "example": "吃小笼包要配姜丝。" },
+        { "zh": "南翔", "pinyin": "Nánxiáng", "en": "Nanxiang (origin place)", "example": "南翔小笼包是上海名小吃。" }
+      ]
+    },
+    {
+      "name": "灌汤包",
+      "nameEn": "Soup-filled Buns",
+      "nameRuby": [["灌","guàn"],["汤","tāng"],["包","bāo"]],
+      "icon": "🫕",
+      "words": [
+        { "zh": "灌汤包", "pinyin": "guàntāngbāo", "en": "soup-filled bun", "example": "开封灌汤包很有名。" },
+        { "zh": "汤", "pinyin": "tāng", "en": "soup", "example": "灌汤包的汤比小笼包更多。" },
+        { "zh": "吸管", "pinyin": "xīguǎn", "en": "straw", "example": "有人用吸管喝灌汤包的汤。" },
+        { "zh": "咬", "pinyin": "yǎo", "en": "to bite", "example": "先咬一个小口，再喝汤。" },
+        { "zh": "烫", "pinyin": "tàng", "en": "scalding hot", "example": "小心，灌汤包很烫！" },
+        { "zh": "牛肉", "pinyin": "niúròu", "en": "beef", "example": "牛肉灌汤包也很好吃。" },
+        { "zh": "三鲜", "pinyin": "sānxiān", "en": "three delicacies", "example": "三鲜灌汤包有虾仁、猪肉和韭菜。" },
+        { "zh": "韧", "pinyin": "rèn", "en": "chewy / elastic", "example": "灌汤包的皮很有韧性。" },
+        { "zh": "开封", "pinyin": "Kāifēng", "en": "Kaifeng (origin city)", "example": "开封是灌汤包的发源地。" }
+      ]
+    },
+    {
+      "name": "北方包子",
+      "nameEn": "Northern Steamed Buns",
+      "nameRuby": [["北","běi"],["方","fāng"],["包","bāo"],["子","zi"]],
+      "icon": "🥟",
+      "words": [
+        { "zh": "包子", "pinyin": "bāozi", "en": "steamed stuffed bun", "example": "北方的包子个头很大。" },
+        { "zh": "蒸", "pinyin": "zhēng", "en": "to steam", "example": "包子要蒸十五分钟。" },
+        { "zh": "笼", "pinyin": "lóng", "en": "steamer basket", "example": "一笼包子有六个。" },
+        { "zh": "猪肉大葱", "pinyin": "zhūròu dàcōng", "en": "pork & green onion", "example": "猪肉大葱是最经典的包子馅。" },
+        { "zh": "猪肉白菜", "pinyin": "zhūròu báicài", "en": "pork & napa cabbage", "example": "冬天最常吃猪肉白菜包子。" },
+        { "zh": "牛肉大葱", "pinyin": "niúròu dàcōng", "en": "beef & green onion", "example": "牛肉大葱包子很香。" },
+        { "zh": "羊肉胡萝卜", "pinyin": "yángròu húluóbo", "en": "lamb & carrot", "example": "西北人喜欢吃羊肉胡萝卜包子。" },
+        { "zh": "酸菜猪肉", "pinyin": "suāncài zhūròu", "en": "pickled cabbage & pork", "example": "酸菜猪肉包子是东北特色。" },
+        { "zh": "韭菜鸡蛋", "pinyin": "jiǔcài jīdàn", "en": "chive & egg", "example": "韭菜鸡蛋包子是素馅的。" },
+        { "zh": "豆沙", "pinyin": "dòushā", "en": "red bean paste", "example": "豆沙包子是甜的。" },
+        { "zh": "馅儿", "pinyin": "xiànr", "en": "filling / stuffing", "example": "你喜欢什么馅儿的包子？" },
+        { "zh": "皮", "pinyin": "pí", "en": "wrapper / dough skin", "example": "北方包子皮又厚又松软。" },
+        { "zh": "狗不理", "pinyin": "Gǒubùlǐ", "en": "Goubuli (famous brand)", "example": "天津狗不理包子很有名。" }
+      ]
+    },
+    {
+      "name": "饺子",
+      "nameEn": "Dumplings",
+      "nameRuby": [["饺","jiǎo"],["子","zi"]],
+      "icon": "🥟",
+      "words": [
+        { "zh": "饺子", "pinyin": "jiǎozi", "en": "dumpling", "example": "过年我们一起包饺子。" },
+        { "zh": "包", "pinyin": "bāo", "en": "to wrap / to make", "example": "妈妈教我包饺子。" },
+        { "zh": "饺子皮", "pinyin": "jiǎozi pí", "en": "dumpling wrapper", "example": "饺子皮要擀得又圆又薄。" },
+        { "zh": "擀", "pinyin": "gǎn", "en": "to roll (dough)", "example": "爸爸擀饺子皮很快。" },
+        { "zh": "馅儿", "pinyin": "xiànr", "en": "filling", "example": "饺子馅儿要调好味。" },
+        { "zh": "煮", "pinyin": "zhǔ", "en": "to boil", "example": "水开了再下饺子煮。" },
+        { "zh": "蒸饺", "pinyin": "zhēngjiǎo", "en": "steamed dumpling", "example": "蒸饺的皮是透明的。" },
+        { "zh": "煎饺", "pinyin": "jiānjiǎo", "en": "pan-fried dumpling", "example": "煎饺底部金黄酥脆。" },
+        { "zh": "醋", "pinyin": "cù", "en": "vinegar", "example": "吃饺子要蘸醋。" },
+        { "zh": "蘸", "pinyin": "zhàn", "en": "to dip", "example": "饺子蘸醋和蒜泥最好吃。" },
+        { "zh": "蒜泥", "pinyin": "suànní", "en": "mashed garlic", "example": "北方人吃饺子离不开蒜泥。" },
+        { "zh": "过年", "pinyin": "guònián", "en": "to celebrate New Year", "example": "过年吃饺子是北方的传统。" }
+      ]
+    }
+  ]
+}
