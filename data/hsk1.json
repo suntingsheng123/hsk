@@ -5,6 +5,7 @@
     {
       "name": "家庭称呼",
       "nameEn": "Family",
+      "nameRuby": [["家","jiā"],["庭","tíng"],["称","chēng"],["呼","hū"]],
       "icon": "👨‍👩‍👧",
       "words": [
         { "zh": "爸爸", "pinyin": "bàba", "en": "father", "example": "我爸爸很高。" },
@@ -22,6 +23,7 @@
     {
       "name": "代词",
       "nameEn": "Pronouns",
+      "nameRuby": [["代","dài"],["词","cí"]],
       "icon": "👤",
       "words": [
         { "zh": "我", "pinyin": "wǒ", "en": "I / me", "example": "我是学生。" },
@@ -38,6 +40,7 @@
     {
       "name": "问候寒暄",
       "nameEn": "Greetings",
+      "nameRuby": [["问","wèn"],["候","hòu"],["寒","hán"],["暄","xuān"]],
       "icon": "👋",
       "words": [
         { "zh": "你好", "pinyin": "nǐ hǎo", "en": "hello", "example": "你好，我叫小明。" },
@@ -53,6 +56,7 @@
     {
       "name": "数字时间",
       "nameEn": "Numbers & Time",
+      "nameRuby": [["数","shù"],["字","zì"],["时","shí"],["间","jiān"]],
       "icon": "🔢",
       "words": [
         { "zh": "一", "pinyin": "yī", "en": "one", "example": "我有一本书。" },
@@ -70,6 +74,7 @@
     {
       "name": "日常动作",
       "nameEn": "Daily Actions",
+      "nameRuby": [["日","rì"],["常","cháng"],["动","dòng"],["作","zuò"]],
       "icon": "🏃",
       "words": [
         { "zh": "吃", "pinyin": "chī", "en": "to eat", "example": "我吃米饭。" },
@@ -87,6 +92,7 @@
     {
       "name": "小笼包",
       "nameEn": "Soup Dumplings",
+      "nameRuby": [["小","xiǎo"],["笼","lóng"],["包","bāo"]],
       "icon": "🧆",
       "words": [
         { "zh": "小笼包", "pinyin": "xiǎolóngbāo", "en": "soup dumpling", "example": "上海的小笼包最有名。" },
@@ -104,6 +110,7 @@
     {
       "name": "灌汤包",
       "nameEn": "Soup-filled Buns",
+      "nameRuby": [["灌","guàn"],["汤","tāng"],["包","bāo"]],
       "icon": "🫕",
       "words": [
         { "zh": "灌汤包", "pinyin": "guàntāngbāo", "en": "soup-filled bun", "example": "开封灌汤包很有名。" },
@@ -120,6 +127,7 @@
     {
       "name": "北方包子",
       "nameEn": "Northern Steamed Buns",
+      "nameRuby": [["北","běi"],["方","fāng"],["包","bāo"],["子","zi"]],
       "icon": "🥟",
       "words": [
         { "zh": "包子", "pinyin": "bāozi", "en": "steamed stuffed bun", "example": "北方的包子个头很大。" },
@@ -140,6 +148,7 @@
     {
       "name": "饺子",
       "nameEn": "Dumplings",
+      "nameRuby": [["饺","jiǎo"],["子","zi"]],
       "icon": "🥟",
       "words": [
         { "zh": "饺子", "pinyin": "jiǎozi", "en": "dumpling", "example": "过年我们一起包饺子。" },
@@ -159,6 +168,7 @@
     {
       "name": "其他食物饮品",
       "nameEn": "Other Food & Drinks",
+      "nameRuby": [["其","qí"],["他","tā"],["食","shí"],["物","wù"],["饮","yǐn"],["品","pǐn"]],
       "icon": "🍜",
       "words": [
         { "zh": "馒头", "pinyin": "mántou", "en": "steamed bun (plain)", "example": "北方人喜欢吃馒头。" },
@@ -174,6 +184,7 @@
     {
       "name": "常用形容词",
       "nameEn": "Common Adjectives",
+      "nameRuby": [["常","cháng"],["用","yòng"],["形","xíng"],["容","róng"],["词","cí"]],
       "icon": "🌟",
       "words": [
         { "zh": "好", "pinyin": "hǎo", "en": "good", "example": "这本书很好。" },

@@ -351,6 +351,45 @@ body::after {
   letter-spacing: 0.05em;
 }
 
+/* ===== Ruby pinyin annotations ===== */
+ruby {
+  ruby-position: over;
+}
+
+ruby rt {
+  font-family: var(--font-comic);
+  font-size: 0.4em;
+  font-weight: 400;
+  color: var(--seal-red);
+  letter-spacing: 0;
+  -webkit-text-stroke: 0;
+}
+
+.header-title rt {
+  font-size: 0.35em;
+}
+
+.chapter-tab rt {
+  font-size: 0.55em;
+  color: var(--gold);
+  opacity: 0.8;
+}
+
+.chapter-tab.active rt {
+  color: var(--seal-red);
+  opacity: 1;
+}
+
+.category-label rt {
+  font-size: 0.45em;
+  color: var(--seal-red);
+}
+
+.cat-tag rt {
+  font-size: 0.6em;
+  color: var(--seal-red);
+}
+
 /* ===== Comic Panel Grid ===== */
 .panels-container {
   max-width: 1200px;
@@ -988,30 +1027,30 @@ body::after {
 <!-- ===== Header ===== -->
 <header class="header">
   <div class="seal">HSK</div>
-  <h1 class="header-title">HSK 词汇漫画</h1>
-  <p class="header-subtitle">汉语水平考试 · 第一级词汇图鉴</p>
+  <h1 class="header-title">HSK <ruby>词<rt>cí</rt></ruby><ruby>汇<rt>huì</rt></ruby><ruby>漫<rt>màn</rt></ruby><ruby>画<rt>huà</rt></ruby></h1>
+  <p class="header-subtitle"><ruby>汉<rt>hàn</rt></ruby><ruby>语<rt>yǔ</rt></ruby><ruby>水<rt>shuǐ</rt></ruby><ruby>平<rt>píng</rt></ruby><ruby>考<rt>kǎo</rt></ruby><ruby>试<rt>shì</rt></ruby> · <ruby>第<rt>dì</rt></ruby><ruby>一<rt>yī</rt></ruby><ruby>级<rt>jí</rt></ruby><ruby>词<rt>cí</rt></ruby><ruby>汇<rt>huì</rt></ruby><ruby>图<rt>tú</rt></ruby><ruby>鉴<rt>jiàn</rt></ruby></p>
 </header>
 
 <!-- ===== Chapter Navigation ===== -->
 <nav class="chapter-nav">
   <button class="chapter-tab active" data-level="1" style="--accent: var(--hsk1)">
-    第一章 · HSK 1
+    <ruby>第<rt>dì</rt></ruby><ruby>一<rt>yī</rt></ruby><ruby>章<rt>zhāng</rt></ruby> · HSK 1
     <span class="tab-detail">150 words · Beginner ★☆☆☆☆</span>
   </button>
   <button class="chapter-tab" data-level="2" style="--accent: var(--hsk2)" disabled title="Coming soon">
-    第二章 · HSK 2
+    <ruby>第<rt>dì</rt></ruby><ruby>二<rt>èr</rt></ruby><ruby>章<rt>zhāng</rt></ruby> · HSK 2
     <span class="tab-detail">300 words · Elementary ★★☆☆☆</span>
   </button>
   <button class="chapter-tab" data-level="3" style="--accent: var(--hsk3)" disabled title="Coming soon">
-    第三章 · HSK 3
+    <ruby>第<rt>dì</rt></ruby><ruby>三<rt>sān</rt></ruby><ruby>章<rt>zhāng</rt></ruby> · HSK 3
     <span class="tab-detail">600 words · Intermediate ★★★☆☆</span>
   </button>
   <button class="chapter-tab" data-level="4" style="--accent: var(--hsk4)" disabled title="Coming soon">
-    第四章 · HSK 4
+    <ruby>第<rt>dì</rt></ruby><ruby>四<rt>sì</rt></ruby><ruby>章<rt>zhāng</rt></ruby> · HSK 4
     <span class="tab-detail">1200 words · Advanced ★★★★☆</span>
   </button>
   <button class="chapter-tab" data-level="5" style="--accent: var(--hsk5)" disabled title="Coming soon">
-    第五章 · HSK 5
+    <ruby>第<rt>dì</rt></ruby><ruby>五<rt>wǔ</rt></ruby><ruby>章<rt>zhāng</rt></ruby> · HSK 5
     <span class="tab-detail">2500 words · Proficient ★★★★★</span>
   </button>
 </nav>
@@ -1349,7 +1388,10 @@ body::after {
       const tag = document.createElement('a');
       tag.className = 'cat-tag';
       tag.href = '#cat-' + i;
-      tag.textContent = cat.icon + ' ' + cat.name + (cat.nameEn ? ' · ' + cat.nameEn : '');
+      const rubyName = cat.nameRuby
+        ? cat.nameRuby.map(([ch, py]) => `<ruby>${ch}<rt>${py}</rt></ruby>`).join('')
+        : cat.name;
+      tag.innerHTML = cat.icon + ' ' + rubyName + (cat.nameEn ? ' · ' + cat.nameEn : '');
       categoryTags.appendChild(tag);
     });
   }
@@ -1376,7 +1418,10 @@ body::after {
       divider.className = 'category-divider';
       divider.id = 'cat-' + catIdx;
       const enLabel = cat.nameEn ? `<span class="cat-en"> · ${cat.nameEn}</span>` : '';
-      divider.innerHTML = `<span class="category-label"><span class="cat-icon">${cat.icon}</span>${cat.name}${enLabel}</span>`;
+      const rubyTitle = cat.nameRuby
+        ? cat.nameRuby.map(([ch, py]) => `<ruby>${ch}<rt>${py}</rt></ruby>`).join('')
+        : cat.name;
+      divider.innerHTML = `<span class="category-label"><span class="cat-icon">${cat.icon}</span>${rubyTitle}${enLabel}</span>`;
       container.appendChild(divider);
 
       // Grid
