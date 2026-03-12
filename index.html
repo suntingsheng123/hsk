@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HSK 词汇漫画 — 汉语水平考试词汇图鉴</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QPQ8DQ9YK5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QPQ8DQ9YK5');
+</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
 <style>
 /* ===== Reset & Base ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -737,6 +746,39 @@ ruby rt {
   font-style: italic;
 }
 
+/* ===== Guestbook ===== */
+.guestbook-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.guestbook-container {
+  border: 3px solid var(--ink);
+  box-shadow: var(--panel-shadow);
+  background: var(--white);
+  padding: 24px;
+}
+
+.guestbook-subtitle {
+  font-family: var(--font-kai);
+  font-size: 1rem;
+  color: #888;
+  text-align: center;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+#waline {
+  --waline-theme-color: var(--seal-red);
+  --waline-active-color: #a00000;
+  --waline-font-size: 0.95rem;
+  --waline-bg-color: var(--white);
+  --waline-bg-color-light: var(--paper);
+  --waline-border-color: var(--ink);
+  --waline-color: var(--ink);
+}
+
 /* ===== Footer ===== */
 .footer {
   text-align: center;
@@ -1394,6 +1436,19 @@ ruby rt {
   </div>
 </section>
 
+<!-- ===== 留言板 Guestbook ===== -->
+<section class="guestbook-section">
+  <div class="category-divider">
+    <span class="category-label">
+      <span class="cat-icon">💬</span>留言板 <span class="cat-en">· Guestbook</span>
+    </span>
+  </div>
+  <div class="guestbook-container">
+    <p class="guestbook-subtitle">欢迎留下你的学习心得或改进建议！</p>
+    <div id="waline"></div>
+  </div>
+</section>
+
 <!-- ===== Footer ===== -->
 <footer class="footer">
   <div class="footer-end">未完待续 …</div>
@@ -1775,6 +1830,16 @@ ruby rt {
   loadLevel(1);
 
 })();
+</script>
+
+<script type="module">
+  import Waline from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  Waline.init({
+    el: '#waline',
+    serverURL: 'https://gillian-nongestical-demetrius.ngrok-free.dev',
+    placeholder: '写下你的建议或学习心得...',
+    lang: 'zh-CN',
+  });
 </script>
 
 </body>
