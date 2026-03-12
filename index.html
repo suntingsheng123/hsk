@@ -1833,8 +1833,8 @@ ruby rt {
 </script>
 
 <script type="module">
-  import Waline from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-  Waline.init({
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
     el: '#waline',
     serverURL: 'https://gillian-nongestical-demetrius.ngrok-free.dev',
     placeholder: '写下你的建议或学习心得...',
