@@ -740,11 +740,14 @@ ruby rt {
   font-weight: 600;
   box-shadow: 2px 2px 0 var(--ink);
   transition: transform 0.15s;
+  cursor: pointer;
+  user-select: none;
 }
 
 .pinyin-item:hover {
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0 var(--ink);
+  background: var(--gold);
 }
 
 .tones-demo {
@@ -1880,6 +1883,30 @@ ruby rt {
     .then(r => r.ok ? r.text() : Promise.reject('not found'))
     .then(text => { notesRaw.textContent = text || '(空文件)'; })
     .catch(() => { notesRaw.textContent = '无法加载 content.txt'; });
+
+  // ===== Pinyin Pronunciation =====
+  const pinyinPronMap = {
+    // 声母 Initials
+    'b':'波','p':'坡','m':'摸','f':'佛',
+    'd':'得','t':'特','n':'呢','l':'勒',
+    'g':'哥','k':'科','h':'喝',
+    'j':'鸡','q':'七','x':'西',
+    'zh':'知','ch':'吃','sh':'诗','r':'日',
+    'z':'资','c':'次','s':'思',
+    // 韵母 Finals
+    'a':'啊','o':'哦','e':'鹅','i':'衣','u':'乌','ü':'鱼',
+    'ai':'哀','ei':'诶','ui':'威','ao':'凹','ou':'欧','iu':'优',
+    'an':'安','en':'恩','in':'因','un':'温','ün':'晕',
+    'ang':'昂','eng':'鞥','ing':'英','ong':'翁'
+  };
+
+  document.querySelectorAll('.pinyin-item').forEach(function (item) {
+    item.title = '点击发音';
+    item.addEventListener('click', function () {
+      var text = pinyinPronMap[item.textContent.trim()];
+      if (text) speakChinese(text);
+    });
+  });
 
   // ===== Init =====
   loadLevel(1);
